@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">剪贴板守护</string>
+    <string name="toast_clipboard_cleaned">剪贴板已清空</string>
+    <string name="toast_clipboard_is_empty">剪贴板为空</string>
+
+    <string name="action_clipboard_clean">清空剪贴板</string>
+    <string name="action_clipboard_clean_short">清空</string>
+    <string name="action_clipboard_content">查看剪贴板</string>
+    <string name="action_clipboard_content_short">查看</string>
+
+    <string name="shortcut_disabled">已禁止</string>
+
+    <string name="introduction">剪贴板守护在此，保护你的剪贴板不被随意使用、保护已复制的密码和个人隐私！</string>
+
+    <string name="service_title">服务</string>
+    <string name="service_content">在后台运行服务，当剪贴板有变化时清空或提醒你。此方式效率高但耗电。</string>
+    <string name="service_clean">剪贴板有变化时清空</string>
+    <string name="service_report">剪贴板有变化时提醒我</string>
+    <string name="service_status">状态: %s</string>
+    <string name="service_status_running">运行中</string>
+    <string name="service_status_stopped">已停止</string>
+    <string name="service_start">运行服务</string>
+    <string name="service_stop">停止服务</string>
+    <string name="service_started">剪贴板守护服务已启动</string>
+    <string name="service_stopped">剪贴板守护服务已停止</string>
+
+    <string name="widget_title">小部件</string>
+    <string name="widget_content">在桌面创建小部件。点击清空剪贴板或显示其内容。\n\n你可以在小部件菜单中找到他们。</string>
+
+    <string name="shortcut_title">快捷方式</string>
+    <string name="shortcut_content">在桌面创建快捷方式。点击清空剪贴板或显示其内容。</string>
+    <string name="shortcut_create_clean">添加 \"清空\" 快捷方式</string>
+    <string name="shortcut_create_content">添加 \"显示内容\" 快捷方式</string>
+    <string name="shortcut_no_permission">应用无创建快捷方式权限</string>
+    <string name="shortcut_have_permission">权限已获取，再次点击创建快捷方式</string>
+
+    <string name="tile_title">快速设置</string>
+    <string name="tile_content">在通知栏添加快速设置。点击清空剪贴板或显示其内容。\n\n你可以在快速设置的编辑界面找到它们。</string>
+</resources>
