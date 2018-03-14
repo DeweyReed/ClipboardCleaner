@@ -37,15 +37,6 @@
             android:theme="@android:style/Theme.NoDisplay" />
 
         <receiver
-            android:name=".CleanReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="io.github.deweyreed.clipboardcleaner.action.CLEAN" />
-                <action android:name="io.github.deweyreed.clipboardcleaner.action.CONTENT" />
-            </intent-filter>
-        </receiver>
-        <receiver
             android:name=".BootReceiver"
             android:enabled="true"
             android:exported="false">

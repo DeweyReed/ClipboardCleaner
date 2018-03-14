@@ -22,10 +22,8 @@ class IntentActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
-            if (intent != null && intent.action == CleanReceiver.ACTION_CONTENT) {
-                CleanReceiver.content(this.applicationContext)
-            } else {
-                CleanReceiver.clean(this.applicationContext)
+            if (intent?.action != null) {
+                clean(intent.action)
             }
         } finally {
             finish()

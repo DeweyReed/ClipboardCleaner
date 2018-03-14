@@ -52,9 +52,9 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
     override fun onPrimaryClipChanged() {
         val option = getServiceOption(this)
         if (option == SERVICE_OPTION_CLEAN) {
-            CleanReceiver.clean(this)
+            clean(ACTION_CLEAN)
         } else if (option == SERVICE_OPTION_CONTENT) {
-            CleanReceiver.content(this)
+            clean(ACTION_CONTENT)
         }
     }
 

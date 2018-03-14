@@ -46,13 +46,13 @@ fun Context.getSafeSharedPreference(): SharedPreferences = PreferenceManager.get
 fun Context.createCleanShortcut() {
     createShortcut("clean",
             R.string.action_clipboard_clean_short, R.string.action_clipboard_clean,
-            R.drawable.ic_shortcut_broom, CleanReceiver.ACTION_CLEAN)
+            R.drawable.ic_shortcut_broom, ACTION_CLEAN)
 }
 
 fun Context.createContentShortcut() {
     createShortcut("content",
             R.string.action_clipboard_content_short, R.string.action_clipboard_content,
-            R.drawable.ic_shortcut_clipboard, CleanReceiver.ACTION_CONTENT)
+            R.drawable.ic_shortcut_clipboard, ACTION_CONTENT)
 }
 
 private fun Context.createShortcut(id: String,
@@ -68,7 +68,7 @@ private fun Context.createShortcut(id: String,
                         .setIcon(IconCompat.createWithResource(this, iconRes))
                         .setIntent(IntentActivity.activityIntent(this, action))
                         .build(), PendingIntent.getBroadcast(this, 0,
-                CleanReceiver.contentIntent(this), 0).intentSender)
+                IntentActivity.activityIntent(this, ACTION_CONTENT), 0).intentSender)
         // Show current clipboard content after shortcut's created
     } else {
         toast(R.string.shortcut_no_permission)
