@@ -42,7 +42,7 @@
     <string name="setting_message_saved">Saved</string>
 
     <string name="setting_keyword_title">Keyword Filter</string>
-    <string name="setting_keyword_content">If there is any keyword, ClipboardBoard will only clean the content including keywords.</string>
+    <string name="setting_keyword_content">If enabled, ClipboardBoard will only clean the content including keywords.</string>
 
     <string name="setting_keyword_normal_title">Keyword</string>
     <string name="setting_keyword_regex_title">Regex</string>

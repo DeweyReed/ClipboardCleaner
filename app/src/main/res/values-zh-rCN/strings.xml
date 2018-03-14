@@ -42,7 +42,7 @@
     <string name="setting_message_saved">保存完毕</string>
 
     <string name="setting_keyword_title">关键字过滤</string>
-    <string name="setting_keyword_content">启用后，剪贴板守护仅在内容符合时的清空。</string>
+    <string name="setting_keyword_content">启用后，剪贴板守护仅在内容符合时清空剪贴板。</string>
 
     <string name="setting_keyword_normal_title">关键字</string>
     <string name="setting_keyword_regex_title">正则</string>
