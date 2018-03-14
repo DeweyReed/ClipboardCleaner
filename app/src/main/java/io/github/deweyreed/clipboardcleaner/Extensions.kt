@@ -15,7 +15,6 @@ import android.support.v4.content.pm.ShortcutInfoCompat
 import android.support.v4.content.pm.ShortcutManagerCompat
 import android.support.v4.graphics.drawable.IconCompat
 import android.support.v7.app.AlertDialog
-import android.text.InputType
 import android.view.LayoutInflater
 import android.widget.EditText
 import android.widget.Toast
@@ -55,8 +54,9 @@ fun Context.requestKeywordInput(callback: InputCallback) {
     val input = LayoutInflater.from(this).inflate(R.layout.dialog_input, null, false)
     builder.setView(input)
             .setPositiveButton(android.R.string.ok) { _, _ ->
-                input.findViewById<EditText>(R.id.editDialogInput)
-                        ?.text?.toString()?.let { callback.onInput(it) }
+                input.findViewById<EditText>(R.id.editDialogInput)?.text?.toString()
+                        .takeIf { it != null && it.isNotEmpty() }
+                        ?.let { callback.onInput(it) }
             }
             .setNegativeButton(android.R.string.cancel, null)
     builder.show()
