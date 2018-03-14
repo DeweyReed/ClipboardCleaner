@@ -14,11 +14,17 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.content.pm.ShortcutInfoCompat
 import android.support.v4.content.pm.ShortcutManagerCompat
 import android.support.v4.graphics.drawable.IconCompat
+import android.support.v7.app.AlertDialog
+import android.text.InputType
+import android.view.LayoutInflater
+import android.widget.EditText
 import android.widget.Toast
 
 /**
  * Created on 2018/3/8.
  */
+
+fun Context.dip(value: Int): Int = (value * resources.displayMetrics.density).toInt()
 
 fun Context.toast(@StringRes id: Int) = toast(getString(id))
 
@@ -38,6 +44,23 @@ fun Context.safeContext(): Context =
         } ?: this
 
 fun Context.getSafeSharedPreference(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(safeContext())
+
+interface InputCallback {
+    fun onInput(text: String)
+}
+
+fun Context.requestKeywordInput(callback: InputCallback) {
+    val builder = AlertDialog.Builder(this)
+            .setTitle(R.string.setting_keyword_normal_title)
+    val input = LayoutInflater.from(this).inflate(R.layout.dialog_input, null, false)
+    builder.setView(input)
+            .setPositiveButton(android.R.string.ok) { _, _ ->
+                input.findViewById<EditText>(R.id.editDialogInput)
+                        ?.text?.toString()?.let { callback.onInput(it) }
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+    builder.show()
+}
 
 //
 // Shortcut
