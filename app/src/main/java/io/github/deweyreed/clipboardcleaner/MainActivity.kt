@@ -108,12 +108,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpSetting() {
+        if (getUsingKeyword()) {
+            checkKeyword.isChecked = true
+            layoutKeywordSetting.visibility = View.VISIBLE
+        }
+
         checkKeyword.setOnCheckedChangeListener { _, isChecked ->
             setUsingKeyword(isChecked)
             layoutKeywordSetting.visibility = if (isChecked) View.VISIBLE else View.GONE
+            // Scroll to bottom after setting layout is shown
+            layoutMainScroll.postDelayed({
+                layoutMainScroll.fullScroll(View.FOCUS_DOWN)
+            }, 300)
         }
-
-        checkKeyword.isChecked = getUsingKeyword()
 
         fun ViewGroup.addKeywordView(keyword: String): View {
             val view = layoutInflater.inflate(R.layout.item_keyword, this, false)
