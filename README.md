@@ -42,8 +42,11 @@ Fortunatelly, newer Android versions use AutoFill or other mechanism to handle s
 ## Known issues and TODOs
 
 1. Service won't always work for Android O(Background restraint)
-2. Use regex to determine if clipboard should be cleaned.
-3. Xposed support(I'm not good at this one. Waiting for someone who knows about it)
+1. Xposed support(I'm not good at this one. Waiting for someone who knows about it)
+
+## Update
+
+1.1 => Use keyword/regex to determine if clipboard should be cleaned.
 
 ## License
 [MIT License](https://github.com/DeweyReed/ClipboardCleaner/blob/master/LICENSE)
