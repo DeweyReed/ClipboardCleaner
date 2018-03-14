@@ -14,7 +14,7 @@
     <a href="https://www.coolapk.com/apk/180063">
         <img src="https://img.shields.io/badge/Download-CoolApk-green.svg"/>
     </a>
-    <a href="https://github.com/DeweyReed/ClipboardCleaner/releases/download/1.0/ClipboardCleaner1.0.apk">
+    <a href="https://github.com/DeweyReed/ClipboardCleaner/releases">
         <img src="https://img.shields.io/badge/Download-Github-green.svg"/>
     </a>
 </div>
