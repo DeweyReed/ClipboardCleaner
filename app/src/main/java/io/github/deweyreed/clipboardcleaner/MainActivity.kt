@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -69,7 +68,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        updateServiceStatus(CleanService.getServiceStarted(this))
+        // We don't know if the service's killed by the system.
+        val isServiceRunning = CleanService.isServiceRunning(this)
+        updateServiceStatus(isServiceRunning)
+        CleanService.setServiceStarted(this, isServiceRunning)
+
         btnServiceStart.setOnClickListener {
             if (CleanService.getServiceStarted(this@MainActivity)) {
                 CleanService.stop(this@MainActivity)

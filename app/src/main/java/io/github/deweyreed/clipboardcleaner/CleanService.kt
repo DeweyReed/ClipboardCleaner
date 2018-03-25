@@ -1,5 +1,6 @@
 package io.github.deweyreed.clipboardcleaner
 
+import android.app.ActivityManager
 import android.app.Service
 import android.content.ClipboardManager
 import android.content.Context
@@ -30,6 +31,18 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
         fun setServiceStarted(context: Context, started: Boolean) =
                 context.getSafeSharedPreference()
                         .edit().putBoolean(PREF_SERVICE_STARTED, started).apply()
+
+        fun isServiceRunning(context: Context): Boolean {
+            val manager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+            // it will still return the caller's own services for Android O
+            @Suppress("DEPRECATION")
+            for (service in manager.getRunningServices(Integer.MAX_VALUE)) {
+                if (CleanService::class.java.name == service.service.className) {
+                    return true
+                }
+            }
+            return false
+        }
 
         fun getServiceOption(context: Context): Int = context.getSafeSharedPreference()
                 .getInt(PREF_SERVICE_OPTION, SERVICE_OPTION_CLEAN)
