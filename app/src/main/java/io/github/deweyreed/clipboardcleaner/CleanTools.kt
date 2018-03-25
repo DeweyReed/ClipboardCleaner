@@ -45,6 +45,8 @@ fun Context.clean(@CleanAction action: String) {
                         return
                     }
                 }
+                // Content passes keywords tests
+                toast(R.string.toast_clipboard_nothing)
             } else {
                 clean()
             }

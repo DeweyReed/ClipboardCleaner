@@ -2,6 +2,7 @@
     <string name="app_name">ClipboardCleaner</string>
     <string name="toast_clipboard_cleaned">Clipboard has been cleaned</string>
     <string name="toast_clipboard_is_empty">Clipboard is empty</string>
+    <string name="toast_clipboard_nothing">Nothing needs to be cleaned</string>
 
     <string name="action_clipboard_clean">Clean clipboard</string>
     <string name="action_clipboard_clean_short">Clean</string>
