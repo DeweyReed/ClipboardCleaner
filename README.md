@@ -7,6 +7,7 @@
 <div align="center">
   <strong>Check and clean your clipboard using service, widget, shortcut and quick setting tile.</strong>
 </div>
+</br>
 <div align="center">
     <a href="https://play.google.com/store/apps/details?id=io.github.deweyreed.clipboardcleaner">
         <img src="https://img.shields.io/badge/Download-PlayStore-green.svg"/>
@@ -41,7 +42,6 @@ Fortunatelly, newer Android versions use AutoFill or other mechanism to handle s
 
 ## Known issues and TODOs
 
-1. Service won't always work for Android O(Background restraint)
 1. Xposed support(I'm not good at this one. Waiting for someone who knows about it)
 
 ## Update
