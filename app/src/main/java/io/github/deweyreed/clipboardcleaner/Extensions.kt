@@ -5,6 +5,7 @@ package io.github.deweyreed.clipboardcleaner
 import android.app.PendingIntent
 import android.content.ComponentName
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
 import android.preference.PreferenceManager
@@ -43,6 +44,10 @@ fun Context.safeContext(): Context =
         } ?: this
 
 fun Context.getSafeSharedPreference(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(safeContext())
+
+fun Context.pendingActivityIntent(intent: Intent): PendingIntent {
+    return PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+}
 
 interface InputCallback {
     fun onInput(text: String)

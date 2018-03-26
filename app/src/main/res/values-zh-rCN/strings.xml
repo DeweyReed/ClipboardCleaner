@@ -25,6 +25,9 @@
     <string name="service_started">剪贴板守护服务已启动</string>
     <string name="service_stopped">剪贴板守护服务已停止</string>
 
+    <string name="service_channel_name">剪贴板守护通知频道</string>
+    <string name="service_notif_title">正在守护剪贴板</string>
+
     <string name="widget_title">小部件</string>
     <string name="widget_content">在桌面创建小部件。点击清空剪贴板或显示其内容。\n\n你可以在小部件菜单中找到他们。</string>
 
