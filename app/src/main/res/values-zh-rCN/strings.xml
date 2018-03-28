@@ -2,7 +2,7 @@
     <string name="app_name">剪贴板守护</string>
     <string name="toast_clipboard_cleaned">剪贴板已清空</string>
     <string name="toast_clipboard_is_empty">剪贴板为空</string>
-    <string name="toast_clipboard_nothing">剪贴板无可清理内容</string>
+    <string name="toast_clipboard_nothing">剪贴板没有可清理的内容啦</string>
 
     <string name="action_clipboard_clean">清空剪贴板</string>
     <string name="action_clipboard_clean_short">清空</string>
