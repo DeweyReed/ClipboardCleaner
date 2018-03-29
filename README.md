@@ -38,11 +38,11 @@ Any app can get your copied password, credit card numbers and more.
 
 However, ClipboardCleaner can't protect your passwords from being got by any app(after all it's a security hole). But it gives you some ways to check and clean your clipboard.
 
-Fortunatelly, newer Android versions use AutoFill or other mechanism to handle sensitive info.
+Fortunately, newer Android versions use AutoFill or other mechanism to handle sensitive info.
 
 ## Known issues and TODOs
 
-1. Xposed support(I'm not good at this one. Waiting for someone who knows about it)
+1. XPosed support(I'm not good at this one. Waiting for someone who knows about it)
 
 ## Update
 

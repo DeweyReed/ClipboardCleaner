@@ -100,7 +100,7 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
 
     private fun buildNotification(): Notification = NotificationCompat.Builder(this,
             CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_broom_black_24dp)
+            .setSmallIcon(R.drawable.ic_broom_white_24dp)
             .setContentTitle(getString(R.string.service_notif_title))
             .setContentIntent(pendingActivityIntent(Intent(this,
                     MainActivity::class.java)))
