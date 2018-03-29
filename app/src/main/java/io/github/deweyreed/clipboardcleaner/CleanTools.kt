@@ -17,45 +17,48 @@ const val ACTION_CONTENT = "$PREFIX.CONTENT"
 @Retention(AnnotationRetention.SOURCE)
 annotation class CleanAction
 
-fun Context.clean(@CleanAction action: String) {
-    val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-    when (action) {
-        ACTION_CLEAN -> {
-            fun clean() {
-                if (clipboard.getClipContent(this).isNotEmpty()) {
-                    clipboard.primaryClip = ClipData.newPlainText("text", "")
-                    toast(R.string.toast_clipboard_cleaned)
-                } else {
-                    // to prevent loop during using a service
-                    toast(R.string.toast_clipboard_is_empty)
-                }
+fun Context.clean(showToastIfEmpty: Boolean = true) {
+    val clipboard = clipboard()
+    fun clean() {
+        if (clipboard.getClipContent(this).isNotEmpty()) {
+            clipboard.primaryClip = ClipData.newPlainText("text", "")
+            toast(R.string.toast_clipboard_cleaned)
+        } else {
+            if (showToastIfEmpty) {
+                // to prevent loop during using a service
+                toast(R.string.toast_clipboard_is_empty)
             }
-
-            if (getUsingKeyword()) {
-                val content = clipboard.getClipContent(this)
-                getNormalKeywords().forEach {
-                    if (content.contains(it)) {
-                        clean()
-                        return
-                    }
-                }
-                getRegexKeywords().forEach {
-                    if (Regex(it).containsMatchIn(content)) {
-                        clean()
-                        return
-                    }
-                }
-                // Content passes keywords tests
-                toast(R.string.toast_clipboard_nothing)
-            } else {
-                clean()
-            }
-        }
-        ACTION_CONTENT -> {
-            toast(clipboard.getClipContent(this))
         }
     }
+
+    if (getUsingKeyword()) {
+        val content = clipboard.getClipContent(this)
+        getNormalKeywords().forEach {
+            if (content.contains(it)) {
+                clean()
+                return
+            }
+        }
+        getRegexKeywords().forEach {
+            if (Regex(it).containsMatchIn(content)) {
+                clean()
+                return
+            }
+        }
+        if (showToastIfEmpty) {
+            // Content passes keywords tests
+            toast(R.string.toast_clipboard_nothing)
+        }
+    } else {
+        clean()
+    }
 }
+
+fun Context.content() {
+    toast(clipboard().getClipContent(this))
+}
+
+private fun Context.clipboard() = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
 
 private fun ClipboardManager.getClipContent(context: Context): String = primaryClip.let { clip ->
     if (clip != null && clip.itemCount > 0)

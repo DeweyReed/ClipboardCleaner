@@ -12,6 +12,7 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
     companion object {
         private const val PREF_SERVICE_STARTED = "pref_service_started"
         private const val PREF_SERVICE_OPTION = "pref_service_option"
+        // Maybe storing CleanAction strings is a better choice
         const val SERVICE_OPTION_CLEAN = 0
         const val SERVICE_OPTION_CONTENT = 1
 
@@ -73,9 +74,9 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
     override fun onPrimaryClipChanged() {
         val option = getServiceOption(this)
         if (option == SERVICE_OPTION_CLEAN) {
-            clean(ACTION_CLEAN)
+            clean(false)
         } else if (option == SERVICE_OPTION_CONTENT) {
-            clean(ACTION_CONTENT)
+            content()
         }
     }
 

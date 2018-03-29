@@ -15,15 +15,17 @@ import android.os.Bundle
  */
 class IntentActivity : Activity() {
     companion object {
-        fun activityIntent(context: Context, action: String): Intent =
+        fun activityIntent(context: Context, @CleanAction action: String): Intent =
                 Intent(context, IntentActivity::class.java).setAction(action)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
-            if (intent?.action != null) {
-                clean(intent.action)
+            val action = intent?.action
+            when (action) {
+                ACTION_CLEAN -> clean()
+                ACTION_CONTENT -> content()
             }
         } finally {
             finish()
