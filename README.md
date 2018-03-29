@@ -46,6 +46,7 @@ Fortunatelly, newer Android versions use AutoFill or other mechanism to handle s
 
 ## Update
 
+1.2 => Use foreground service to monitor clipboard changes
 1.1 => Use keyword/regex to determine if clipboard should be cleaned.
 
 ## License
