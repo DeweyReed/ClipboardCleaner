@@ -43,6 +43,7 @@ Fortunately, newer Android versions use AutoFill or other mechanism to handle se
 ## Known issues and TODOs
 
 1. XPosed support(I'm not good at this one. Waiting for someone who knows about it)
+1. After Android O reboots, service won't be restarted.
 
 ## Update
 
