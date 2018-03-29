@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             cardTile.visibility = View.GONE
         }
 
+        setUpButtons()
         setUpService()
         setUpShortcut()
         setUpSetting()
@@ -37,6 +38,15 @@ class MainActivity : AppCompatActivity() {
         } else {
             toast(R.string.shortcut_no_permission)
             super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        }
+    }
+
+    private fun setUpButtons() {
+        btnClean.setOnClickListener {
+            clean()
+        }
+        btnContent.setOnClickListener {
+            content()
         }
     }
 

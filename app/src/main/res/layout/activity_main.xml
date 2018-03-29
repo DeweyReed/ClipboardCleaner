@@ -2,8 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/layoutMainScroll"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="io.github.deweyreed.clipboardcleaner.MainActivity">
 
@@ -43,6 +43,28 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textSize="16sp" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnClean"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/action_clipboard_clean_short" />
+
+                    <Button
+                        android:id="@+id/btnContent"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/action_clipboard_content_short" />
+                </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
