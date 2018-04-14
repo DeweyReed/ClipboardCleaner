@@ -48,4 +48,5 @@ Android的剪贴板内容和变化是可以被任何应用获取的，这算一�
 1.1 => 使用关键字/正则选择性清空剪贴板
 
 ## License
+
 [MIT License](https://github.com/DeweyReed/ClipboardCleaner/blob/master/LICENSE)

@@ -18,10 +18,12 @@
     <a href="https://github.com/DeweyReed/ClipboardCleaner/releases">
         <img src="https://img.shields.io/badge/Download-Github-green.svg"/>
     </a>
+    </br>
+    <a href="'https://github.com/DeweyReed/ClipboardCleaner/blob/master/README_ZH.md">
+        <img src="https://img.shields.io/badge/Translation-%E4%B8%AD%E6%96%87-red.svg">
+    </a>
 </div>
 </br>
-
-[Chinese Doc 中文文档](https://github.com/DeweyReed/ClipboardCleaner/blob/master/README_ZH.md)
 
 ## Screenshot
 
@@ -51,4 +53,5 @@ Fortunately, newer Android versions use AutoFill or other mechanism to handle se
 1.1 => Use keyword/regex to determine if clipboard should be cleaned.
 
 ## License
+
 [MIT License](https://github.com/DeweyReed/ClipboardCleaner/blob/master/LICENSE)
