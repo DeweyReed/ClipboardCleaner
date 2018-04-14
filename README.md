@@ -19,7 +19,7 @@
         <img src="https://img.shields.io/badge/Download-Github-green.svg"/>
     </a>
     </br>
-    <a href="'https://github.com/DeweyReed/ClipboardCleaner/blob/master/README_ZH.md">
+    <a href="https://github.com/DeweyReed/ClipboardCleaner/blob/master/README_ZH.md">
         <img src="https://img.shields.io/badge/Translation-%E4%B8%AD%E6%96%87-red.svg">
     </a>
 </div>
