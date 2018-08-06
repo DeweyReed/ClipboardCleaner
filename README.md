@@ -44,14 +44,13 @@ Fortunately, newer Android versions use AutoFill or other mechanism to handle se
 
 ## Known issues and TODOs
 
-1. XPosed support(I'm not good at this one. Waiting for someone who knows about it)
-1. After Android O reboots, service won't be restarted.
+1. XPosed support(I'm not good at this one. Waiting for someone's support)
 
 ## Update
 
-1.2 => Use foreground service to monitor clipboard changes
-
-1.1 => Use keyword/regex to determine if clipboard should be cleaned.
+- 1.2.1 => Fix app crash after system restarting on Android O or later
+- 1.2 => Use foreground service to monitor clipboard changes
+- 1.1 => Use keyword/regex to determine if clipboard should be cleaned.
 
 ## License
 
