@@ -1,9 +1,10 @@
 
-# Created by https://www.gitignore.io/api/android,androidstudio
+# Created by https://www.gitignore.io/api/java,macos,linux,gradle,kotlin,android,windows,androidstudio
 
 ### Android ###
 # Built application files
 *.apk
+*.ap_
 
 # Files for the ART/Dalvik VM
 *.dex
@@ -65,6 +66,9 @@ gen-external-apklibs
 
 # Generated files
 
+# Gradle files
+.gradle
+
 # Signing files
 .signing/
 
@@ -75,6 +79,7 @@ gen-external-apklibs
 # Log Files
 
 # Android Studio
+/*/build/
 /*/local.properties
 /*/out
 /*/*/build
@@ -87,11 +92,17 @@ gen-external-apklibs
 
 # External native build folder generated in Android Studio 2.2 and later
 
+# NDK
+obj/
+
 # IntelliJ IDEA
 *.iws
 /out/
 
 # User-specific configurations
+.idea/caches/
+.idea/libraries/
+.idea/shelf/
 .idea/.name
 .idea/compiler.xml
 .idea/copyright/profiles_settings.xml
@@ -153,7 +164,110 @@ fabric.properties
 
 !/gradle/wrapper/gradle-wrapper.jar
 
-.idea/codeStyles/
-.idea/caches/
+### Java ###
+# Compiled class file
 
-# End of https://www.gitignore.io/api/android,androidstudio
+# Log file
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+
+# Package Files #
+*.jar
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+
+### Kotlin ###
+# Compiled class file
+
+# Log file
+
+# BlueJ files
+
+# Mobile Tools for Java (J2ME)
+
+# Package Files #
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+
+### Linux ###
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Windows ###
+# Windows thumbnail cache files
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+### Gradle ###
+**/build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+
+# End of https://www.gitignore.io/api/java,macos,linux,gradle,kotlin,android,windows,androidstudio
+
+.idea/assetWizardSettings.xml
