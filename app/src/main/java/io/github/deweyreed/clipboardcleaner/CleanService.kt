@@ -4,6 +4,7 @@ import android.app.*
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.NotificationCompat
 
 @Suppress("MemberVisibilityCanBePrivate")
@@ -20,7 +21,8 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
 
         fun start(context: Context) {
             setServiceStarted(context, true)
-            context.startService(Intent(context, CleanService::class.java))
+            ActivityCompat.startForegroundService(context,
+                    Intent(context, CleanService::class.java))
         }
 
         fun stop(context: Context) {
