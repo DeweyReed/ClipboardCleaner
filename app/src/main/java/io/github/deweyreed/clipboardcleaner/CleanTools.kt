@@ -3,7 +3,7 @@ package io.github.deweyreed.clipboardcleaner
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.support.annotation.StringDef
+import androidx.annotation.StringDef
 
 /**
  * Created on 2018/3/14.
@@ -80,13 +80,13 @@ fun Context.setUsingKeyword(value: Boolean) = getSafeSharedPreference().edit()
         .putBoolean(PREF_USE_KEYWORD, value).apply()
 
 fun Context.getNormalKeywords(): Set<String> = getSafeSharedPreference()
-        .getStringSet(PREF_KEYWORD_NORMAL, setOf())
+    .getStringSet(PREF_KEYWORD_NORMAL, setOf()) ?: setOf()
 
 fun Context.setNormalKeywords(set: Set<String>) = getSafeSharedPreference().edit()
         .putStringSet(PREF_KEYWORD_NORMAL, set).apply()
 
 fun Context.getRegexKeywords(): Set<String> = getSafeSharedPreference()
-        .getStringSet(PREF_KEYWORD_REGEX, setOf())
+    .getStringSet(PREF_KEYWORD_REGEX, setOf()) ?: setOf()
 
 fun Context.setRegexKeywords(set: Set<String>) = getSafeSharedPreference().edit()
         .putStringSet(PREF_KEYWORD_REGEX, set).apply()

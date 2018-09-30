@@ -4,8 +4,8 @@ import android.app.*
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
-import android.support.v4.app.ActivityCompat
-import android.support.v4.app.NotificationCompat
+import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
 
 @Suppress("MemberVisibilityCanBePrivate")
 class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {

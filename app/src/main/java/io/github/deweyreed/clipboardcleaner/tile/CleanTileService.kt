@@ -2,7 +2,7 @@ package io.github.deweyreed.clipboardcleaner.tile
 
 import android.os.Build
 import android.service.quicksettings.TileService
-import android.support.annotation.RequiresApi
+import androidx.annotation.RequiresApi
 import io.github.deweyreed.clipboardcleaner.ACTION_CLEAN
 import io.github.deweyreed.clipboardcleaner.IntentActivity
 
