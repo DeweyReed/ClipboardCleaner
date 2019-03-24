@@ -30,10 +30,13 @@ class MainActivity : AppCompatActivity() {
         setUpSetting()
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int,
-                                            permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>, grantResults: IntArray
+    ) {
         if (permissions.isNotEmpty() && permissions[0] == Manifest.permission.INSTALL_SHORTCUT &&
-                grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED
+        ) {
             toast(R.string.shortcut_have_permission)
         } else {
             toast(R.string.shortcut_no_permission)
@@ -54,11 +57,11 @@ class MainActivity : AppCompatActivity() {
         fun updateServiceStatus(started: Boolean) {
             if (started) {
                 textServiceStatus.text = getString(R.string.service_status)
-                        .format(getString(R.string.service_status_running))
+                    .format(getString(R.string.service_status_running))
                 btnServiceStart.text = getString(R.string.service_stop)
             } else {
                 textServiceStatus.text = getString(R.string.service_status)
-                        .format(getString(R.string.service_status_stopped))
+                    .format(getString(R.string.service_status_stopped))
                 btnServiceStart.text = getString(R.string.service_start)
             }
         }
@@ -98,10 +101,15 @@ class MainActivity : AppCompatActivity() {
     private fun setUpShortcut() {
         fun checkAndRequestShortcutPermission(): Boolean {
             return if (!isOOrLater() && isKitkatOrLater() &&
-                    ContextCompat.checkSelfPermission(this,
-                            Manifest.permission.INSTALL_SHORTCUT) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this,
-                        arrayOf(Manifest.permission.INSTALL_SHORTCUT), 0)
+                ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.INSTALL_SHORTCUT
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.INSTALL_SHORTCUT), 0
+                )
                 false
             } else {
                 true
@@ -152,7 +160,7 @@ class MainActivity : AppCompatActivity() {
             val keywords = mutableListOf<String>()
             (0..childCount).forEach {
                 getChildAt(it)?.findViewById<TextView>(R.id.textKeywordContent)
-                        ?.text?.toString()?.let { keyword ->
+                    ?.text?.toString()?.let { keyword ->
                     keywords.add(keyword)
                 }
             }

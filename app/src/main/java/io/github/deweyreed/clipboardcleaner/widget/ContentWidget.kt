@@ -14,17 +14,26 @@ import io.github.deweyreed.clipboardcleaner.R
  */
 class ContentWidget : AppWidgetProvider() {
     companion object {
-        private fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManager,
-                                    appWidgetId: Int) {
+        private fun updateAppWidget(
+            context: Context,
+            appWidgetManager: AppWidgetManager,
+            appWidgetId: Int
+        ) {
             val views = RemoteViews(context.packageName, R.layout.widget_content)
-            val pi = PendingIntent.getActivity(context, 0,
-                    IntentActivity.activityIntent(context, ACTION_CONTENT), 0)
+            val pi = PendingIntent.getActivity(
+                context, 0,
+                IntentActivity.activityIntent(context, ACTION_CONTENT), 0
+            )
             views.setOnClickPendingIntent(R.id.viewWidgetContent, pi)
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }
     }
 
-    override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
+    override fun onUpdate(
+        context: Context,
+        appWidgetManager: AppWidgetManager,
+        appWidgetIds: IntArray
+    ) {
         // There may be multiple widgets active, so update all of them
         for (appWidgetId in appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId)

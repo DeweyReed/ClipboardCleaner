@@ -21,8 +21,10 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
 
         fun start(context: Context) {
             setServiceStarted(context, true)
-            ActivityCompat.startForegroundService(context,
-                    Intent(context, CleanService::class.java))
+            ActivityCompat.startForegroundService(
+                context,
+                Intent(context, CleanService::class.java)
+            )
         }
 
         fun stop(context: Context) {
@@ -31,11 +33,11 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
         }
 
         fun getServiceStarted(context: Context) = context.getSafeSharedPreference()
-                .getBoolean(PREF_SERVICE_STARTED, false)
+            .getBoolean(PREF_SERVICE_STARTED, false)
 
         fun setServiceStarted(context: Context, started: Boolean) =
-                context.getSafeSharedPreference()
-                        .edit().putBoolean(PREF_SERVICE_STARTED, started).apply()
+            context.getSafeSharedPreference()
+                .edit().putBoolean(PREF_SERVICE_STARTED, started).apply()
 
         fun isServiceRunning(context: Context): Boolean {
             val manager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
@@ -50,11 +52,11 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
         }
 
         fun getServiceOption(context: Context): Int = context.getSafeSharedPreference()
-                .getInt(PREF_SERVICE_OPTION, SERVICE_OPTION_CLEAN)
+            .getInt(PREF_SERVICE_OPTION, SERVICE_OPTION_CLEAN)
 
         fun setServiceOption(context: Context, option: Int) {
             context.getSafeSharedPreference().edit()
-                    .putInt(PREF_SERVICE_OPTION, if (option in 0..1) option else 0).apply()
+                .putInt(PREF_SERVICE_OPTION, if (option in 0..1) option else 0).apply()
         }
     }
 
@@ -63,7 +65,7 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
     override fun onCreate() {
         super.onCreate()
         (getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager)
-                .addPrimaryClipChangedListener(this)
+            .addPrimaryClipChangedListener(this)
         toast(R.string.service_started)
     }
 
@@ -85,7 +87,7 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
     override fun onDestroy() {
         super.onDestroy()
         (getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager)
-                .removePrimaryClipChangedListener(this)
+            .removePrimaryClipChangedListener(this)
         toast(R.string.service_stopped)
     }
 
@@ -93,26 +95,44 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
         if (isOOrLater()) {
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             if (manager.getNotificationChannel(CHANNEL_ID) == null) {
-                manager.createNotificationChannel(NotificationChannel(CHANNEL_ID,
+                manager.createNotificationChannel(
+                    NotificationChannel(
+                        CHANNEL_ID,
                         getString(R.string.service_channel_name),
-                        NotificationManager.IMPORTANCE_DEFAULT))
+                        NotificationManager.IMPORTANCE_DEFAULT
+                    )
+                )
             }
         }
     }
 
-    private fun buildNotification(): Notification = NotificationCompat.Builder(this,
-            CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_broom_white_24dp)
-            .setContentTitle(getString(R.string.service_notif_title))
-            .setContentIntent(pendingActivityIntent(Intent(this,
-                    MainActivity::class.java)))
-            .addAction(R.drawable.ic_shortcut_broom,
-                    getString(R.string.action_clipboard_clean_short),
-                    pendingActivityIntent(
-                            IntentActivity.activityIntent(this, ACTION_CLEAN)))
-            .addAction(R.drawable.ic_shortcut_clipboard,
-                    getString(R.string.action_clipboard_content_short),
-                    pendingActivityIntent(
-                            IntentActivity.activityIntent(this, ACTION_CONTENT)))
-            .build()
+    private fun buildNotification(): Notification = NotificationCompat.Builder(
+        this,
+        CHANNEL_ID
+    )
+        .setSmallIcon(R.drawable.ic_broom_white_24dp)
+        .setContentTitle(getString(R.string.service_notif_title))
+        .setContentIntent(
+            pendingActivityIntent(
+                Intent(
+                    this,
+                    MainActivity::class.java
+                )
+            )
+        )
+        .addAction(
+            R.drawable.ic_shortcut_broom,
+            getString(R.string.action_clipboard_clean_short),
+            pendingActivityIntent(
+                IntentActivity.activityIntent(this, ACTION_CLEAN)
+            )
+        )
+        .addAction(
+            R.drawable.ic_shortcut_clipboard,
+            getString(R.string.action_clipboard_content_short),
+            pendingActivityIntent(
+                IntentActivity.activityIntent(this, ACTION_CONTENT)
+            )
+        )
+        .build()
 }

@@ -16,7 +16,7 @@ import android.os.Bundle
 class IntentActivity : Activity() {
     companion object {
         fun activityIntent(context: Context, @CleanAction action: String): Intent =
-                Intent(context, IntentActivity::class.java).setAction(action)
+            Intent(context, IntentActivity::class.java).setAction(action)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

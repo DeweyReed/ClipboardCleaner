@@ -13,7 +13,6 @@ import io.github.deweyreed.clipboardcleaner.IntentActivity
 
 class ContentTileService : TileService() {
     override fun onClick() {
-        startActivityAndCollapse(IntentActivity
-                .activityIntent(this, ACTION_CONTENT))
+        startActivityAndCollapse(IntentActivity.activityIntent(this, ACTION_CONTENT))
     }
 }

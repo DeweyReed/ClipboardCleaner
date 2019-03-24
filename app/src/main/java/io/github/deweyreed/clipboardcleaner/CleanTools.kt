@@ -74,19 +74,19 @@ private const val PREF_KEYWORD_NORMAL = "pref_keyword_normal"
 private const val PREF_KEYWORD_REGEX = "pref_keyword_regex"
 
 fun Context.getUsingKeyword(): Boolean = getSafeSharedPreference()
-        .getBoolean(PREF_USE_KEYWORD, false)
+    .getBoolean(PREF_USE_KEYWORD, false)
 
 fun Context.setUsingKeyword(value: Boolean) = getSafeSharedPreference().edit()
-        .putBoolean(PREF_USE_KEYWORD, value).apply()
+    .putBoolean(PREF_USE_KEYWORD, value).apply()
 
 fun Context.getNormalKeywords(): Set<String> = getSafeSharedPreference()
     .getStringSet(PREF_KEYWORD_NORMAL, setOf()) ?: setOf()
 
 fun Context.setNormalKeywords(set: Set<String>) = getSafeSharedPreference().edit()
-        .putStringSet(PREF_KEYWORD_NORMAL, set).apply()
+    .putStringSet(PREF_KEYWORD_NORMAL, set).apply()
 
 fun Context.getRegexKeywords(): Set<String> = getSafeSharedPreference()
     .getStringSet(PREF_KEYWORD_REGEX, setOf()) ?: setOf()
 
 fun Context.setRegexKeywords(set: Set<String>) = getSafeSharedPreference().edit()
-        .putStringSet(PREF_KEYWORD_REGEX, set).apply()
+    .putStringSet(PREF_KEYWORD_REGEX, set).apply()
