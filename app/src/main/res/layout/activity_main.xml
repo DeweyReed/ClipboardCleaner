@@ -116,6 +116,15 @@
                         android:layout_height="wrap_content"
                         android:text="@string/service_clean" />
 
+                    <TextView
+                        android:id="@+id/textServiceCleanTimeout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        tools:text="@string/service_clean_timeout_template" />
+
                     <RadioButton
                         android:id="@+id/radioBtnReport"
                         android:layout_width="match_parent"
@@ -123,33 +132,6 @@
                         android:text="@string/service_report" />
 
                 </RadioGroup>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/service_clean_timeout"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textSize="16sp" />
-
-                    <EditText
-                        android:id="@+id/editServiceCleanTimeout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/service_clean_timeout_hint"
-                        android:importantForAutofill="no"
-                        android:inputType="number"
-                        android:selectAllOnFocus="true"
-                        tools:targetApi="o" />
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"

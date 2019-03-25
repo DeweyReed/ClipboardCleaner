@@ -4,8 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import android.text.InputType
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -18,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.NumberFormat
 
 class MainActivity : AppCompatActivity() {
 
@@ -119,16 +119,28 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        editServiceCleanTimeout.setText(serviceCleanTimeout.toString())
-        editServiceCleanTimeout.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) =
-                Unit
+        fun updateCleanTimeoutText() {
+            val timeout = serviceCleanTimeout
+            textServiceCleanTimeout.text =
+                getString(R.string.service_clean_timeout_template).format(
+                    resources.getQuantityString(
+                        R.plurals.seconds,
+                        timeout,
+                        NumberFormat.getInstance().format(timeout)
+                    )
+                )
+        }
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) = Unit
-            override fun afterTextChanged(s: Editable?) {
-                serviceCleanTimeout = s?.toString()?.toIntOrNull() ?: 0
+        updateCleanTimeoutText()
+        textServiceCleanTimeout.setOnClickListener {
+            requestInput(
+                R.string.service_clean_timeout,
+                InputType.TYPE_CLASS_NUMBER
+            ) {
+                serviceCleanTimeout = it.toIntOrNull() ?: 0
+                updateCleanTimeoutText()
             }
-        })
+        }
     }
 
     @SuppressLint("InlinedApi")
@@ -205,23 +217,18 @@ class MainActivity : AppCompatActivity() {
             layoutKeywordNormal.addKeywordView(it)
         }
         btnKeywordAddNormal.setOnClickListener {
-            requestKeywordInput(object : InputCallback {
-                override fun onInput(text: String) {
-                    layoutKeywordNormal.addKeywordView(text)
-                }
-            })
+            requestInput(R.string.setting_keyword_normal_title) {
+                layoutKeywordNormal.addKeywordView(it)
+            }
         }
 
         getRegexKeywords().forEach {
             layoutKeywordRegex.addKeywordView(it)
         }
         btnKeywordAddRegex.setOnClickListener {
-            requestKeywordInput(object : InputCallback {
-                override fun onInput(text: String) {
-                    layoutKeywordRegex.addKeywordView(text)
-
-                }
-            })
+            requestInput(R.string.setting_keyword_normal_title) {
+                layoutKeywordRegex.addKeywordView(it)
+            }
         }
 
         btnKeywordSave.setOnClickListener {

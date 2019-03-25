@@ -2,14 +2,13 @@
 
 package io.github.deweyreed.clipboardcleaner
 
-import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
 import android.preference.PreferenceManager
-import android.view.LayoutInflater
+import android.text.InputType
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.DrawableRes
@@ -50,23 +49,26 @@ fun Context.pendingActivityIntent(intent: Intent): PendingIntent {
     return PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 }
 
-interface InputCallback {
-    fun onInput(text: String)
-}
-
-@SuppressLint("InflateParams")
-fun Context.requestKeywordInput(callback: InputCallback) {
-    val builder = AlertDialog.Builder(this)
-        .setTitle(R.string.setting_keyword_normal_title)
-    val input = LayoutInflater.from(this).inflate(R.layout.dialog_input, null, false)
-    builder.setView(input)
-        .setPositiveButton(android.R.string.ok) { _, _ ->
-            input.findViewById<EditText>(R.id.editDialogInput)?.text?.toString()
-                .takeIf { it != null && it.isNotEmpty() }
-                ?.let { callback.onInput(it) }
-        }
+fun Context.requestInput(
+    @StringRes titleRes: Int,
+    inputType: Int = InputType.TYPE_CLASS_TEXT,
+    callback: (String) -> Unit
+) {
+    val dialog = AlertDialog.Builder(this)
+        .setTitle(titleRes)
+        .setView(R.layout.dialog_input)
+        .setPositiveButton(android.R.string.ok, null)
         .setNegativeButton(android.R.string.cancel, null)
-    builder.show()
+        .show()
+
+    val input = dialog.findViewById<EditText>(R.id.editDialogInput)!!
+    input.inputType = inputType
+
+    dialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(android.R.string.ok)) { _, _ ->
+        input.text?.toString()
+            .takeIf { it != null && it.isNotEmpty() }
+            ?.let { callback.invoke(it) }
+    }
 }
 
 //
