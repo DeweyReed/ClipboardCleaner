@@ -4,6 +4,7 @@ import android.app.*
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.os.Handler
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 
@@ -60,6 +61,8 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
         }
     }
 
+    private val cleanHandler: Handler by lazy { Handler() }
+
     override fun onBind(intent: Intent) = null
 
     override fun onCreate() {
@@ -76,9 +79,18 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
     }
 
     override fun onPrimaryClipChanged() {
+        if (currentContent().isEmpty()) return
         val option = getServiceOption(this)
         if (option == SERVICE_OPTION_CLEAN) {
-            clean(false)
+            val timeout = serviceCleanTimeout
+            if (timeout <= 0) {
+                clean()
+            } else {
+                cleanHandler.postDelayed({
+                    clean()
+                }, timeout * 1_000L)
+                toast(getString(R.string.service_clean_after_seconds_template).format(timeout))
+            }
         } else if (option == SERVICE_OPTION_CONTENT) {
             content()
         }

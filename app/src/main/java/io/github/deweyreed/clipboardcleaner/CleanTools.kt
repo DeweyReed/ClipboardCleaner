@@ -17,17 +17,16 @@ const val ACTION_CONTENT = "$PREFIX.CONTENT"
 @Retention(AnnotationRetention.SOURCE)
 annotation class CleanAction
 
-fun Context.clean(showToastIfEmpty: Boolean = true) {
+fun Context.currentContent(): String = clipboard().getClipContent(this)
+
+fun Context.clean() {
     val clipboard = clipboard()
     fun clean() {
         if (clipboard.getClipContent(this).isNotEmpty()) {
             clipboard.primaryClip = ClipData.newPlainText("text", "")
             toast(R.string.toast_clipboard_cleaned)
         } else {
-            if (showToastIfEmpty) {
-                // to prevent loop during using a service
-                toast(R.string.toast_clipboard_is_empty)
-            }
+            toast(R.string.toast_clipboard_is_empty)
         }
     }
 
@@ -45,10 +44,7 @@ fun Context.clean(showToastIfEmpty: Boolean = true) {
                 return
             }
         }
-        if (showToastIfEmpty) {
-            // Content passes keywords tests
-            toast(R.string.toast_clipboard_nothing)
-        }
+        toast(R.string.toast_clipboard_nothing)
     } else {
         clean()
     }
@@ -90,3 +86,10 @@ fun Context.getRegexKeywords(): Set<String> = getSafeSharedPreference()
 
 fun Context.setRegexKeywords(set: Set<String>) = getSafeSharedPreference().edit()
     .putStringSet(PREF_KEYWORD_REGEX, set).apply()
+
+
+private const val PREF_CLEAN_TIMEOUT = "pref_clean_timeout"
+
+var Context.serviceCleanTimeout: Int
+    get() = getSafeSharedPreference().getInt(PREF_CLEAN_TIMEOUT, 0)
+    set(value) = getSafeSharedPreference().edit().putInt(PREF_CLEAN_TIMEOUT, value).apply()

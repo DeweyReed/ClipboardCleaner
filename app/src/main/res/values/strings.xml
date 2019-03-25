@@ -28,6 +28,10 @@
     <string name="service_channel_name">ClipboardCleaner notification channel</string>
     <string name="service_notif_title">Your clipboard is under protection</string>
 
+    <string name="service_clean_timeout">Clean the clipboard after seconds</string>
+    <string name="service_clean_timeout_hint">Seconds</string>
+    <string name="service_clean_after_seconds_template">Clipboard will be cleaned in %d seconds</string>
+
     <string name="widget_title">Widget</string>
     <string name="widget_content">Create widgets on your home screen. Click them to reset clipboard or see clipboard content. \n\nYou can find them in the widget list.</string>
 

@@ -4,6 +4,8 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
@@ -95,6 +97,17 @@ class MainActivity : AppCompatActivity() {
                 updateServiceStatus(true)
             }
         }
+
+        editServiceCleanTimeout.setText(serviceCleanTimeout.toString())
+        editServiceCleanTimeout.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) =
+                Unit
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) = Unit
+            override fun afterTextChanged(s: Editable?) {
+                serviceCleanTimeout = s?.toString()?.toIntOrNull() ?: 0
+            }
+        })
     }
 
     @SuppressLint("InlinedApi")
