@@ -1,6 +1,5 @@
 package io.github.deweyreed.clipboardcleaner.widget
 
-import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
@@ -8,6 +7,7 @@ import android.widget.RemoteViews
 import io.github.deweyreed.clipboardcleaner.ACTION_CLEAN
 import io.github.deweyreed.clipboardcleaner.IntentActivity
 import io.github.deweyreed.clipboardcleaner.R
+import io.github.deweyreed.clipboardcleaner.pendingActivityIntent
 
 /**
  * Implementation of App Widget functionality.
@@ -20,9 +20,8 @@ class CleanWidget : AppWidgetProvider() {
             appWidgetId: Int
         ) {
             val views = RemoteViews(context.packageName, R.layout.widget_clean)
-            val pi = PendingIntent.getActivity(
-                context, 0,
-                IntentActivity.activityIntent(context, ACTION_CLEAN), 0
+            val pi = context.pendingActivityIntent(
+                IntentActivity.activityIntent(context, ACTION_CLEAN)
             )
             views.setOnClickPendingIntent(R.id.viewWidgetClean, pi)
             appWidgetManager.updateAppWidget(appWidgetId, views)
