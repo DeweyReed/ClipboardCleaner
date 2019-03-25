@@ -56,4 +56,8 @@
     <string name="setting_keyword_regex_title">Regex</string>
     <string name="setting_keyword_add_a11y" translatable="false">Add a new keyword</string>
     <string name="setting_keyword_remove_a11y" translatable="false">Remove keyword %s</string>
+
+    <string name="help_title">Help</string>
+    <string name="help_content">\"The clipboard holds only one clip object at a time. When an application puts a clip object on the clipboard, the previous clip object disappears.\"\n\nIf you\'re seeing multiple clips or the clip history, it means something like a soft keyboard app stores them. In this case, this app is incompetent.</string>
+
 </resources>

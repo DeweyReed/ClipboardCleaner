@@ -6,11 +6,14 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -30,6 +33,24 @@ class MainActivity : AppCompatActivity() {
         setUpService()
         setUpShortcut()
         setUpSetting()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item?.itemId) {
+            R.id.action_help -> {
+                AlertDialog.Builder(this)
+                    .setMessage(R.string.help_content)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show()
+                return true
+            }
+        }
+        return false
     }
 
     override fun onRequestPermissionsResult(

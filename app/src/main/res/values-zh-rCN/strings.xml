@@ -54,4 +54,7 @@
 
     <string name="setting_keyword_normal_title">关键字</string>
     <string name="setting_keyword_regex_title">正则</string>
+
+    <string name="help_title">帮助</string>
+    <string name="help_content">\"剪贴板一次只能存放一条内容。当某个应用把一条内容放到剪贴板中时，剪贴板的上一条内容就会消失。\"\n\n如果您看到多条剪贴板内容或剪贴板历史，这意味着可能是输入法等应用保存了它们。这种情况下，本应用无能为力。</string>
 </resources>
