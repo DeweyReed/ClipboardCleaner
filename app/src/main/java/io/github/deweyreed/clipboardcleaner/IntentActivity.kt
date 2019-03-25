@@ -15,8 +15,14 @@ import android.os.Bundle
  */
 class IntentActivity : Activity() {
     companion object {
-        fun activityIntent(context: Context, @CleanAction action: String): Intent =
+        fun activityIntent(
+            context: Context, @CleanAction action: String,
+            newTask: Boolean = false
+        ): Intent =
             Intent(context, IntentActivity::class.java).setAction(action)
+                .apply {
+                    if (newTask) addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
