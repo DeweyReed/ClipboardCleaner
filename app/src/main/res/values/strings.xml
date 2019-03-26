@@ -28,7 +28,7 @@
     <string name="service_channel_name">ClipboardCleaner notification channel</string>
     <string name="service_notif_title">Your clipboard is under protection</string>
 
-    <string name="service_clean_timeout_template" formatted="false">Clean the clipboard after %s seconds (click here to edit)</string>
+    <string name="service_clean_timeout_template" formatted="false">Clean the clipboard after %s (click here to edit)</string>
     <string name="service_clean_timeout">Timeout</string>
     <string name="service_clean_after_seconds_template">Clipboard will be cleaned in %d seconds</string>
 
