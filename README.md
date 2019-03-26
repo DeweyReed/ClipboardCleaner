@@ -12,11 +12,14 @@
     <a href="https://play.google.com/store/apps/details?id=io.github.deweyreed.clipboardcleaner">
         <img src="https://img.shields.io/badge/Download-PlayStore-green.svg"/>
     </a>
-    <a href="https://www.coolapk.com/apk/180063">
-        <img src="https://img.shields.io/badge/Download-CoolApk-green.svg"/>
-    </a>
     <a href="https://github.com/DeweyReed/ClipboardCleaner/releases">
         <img src="https://img.shields.io/badge/Download-Github-green.svg"/>
+    </a>
+    <a href="https://f-droid.org/en/packages/io.github.deweyreed.clipboardcleaner/">
+        <img src="https://img.shields.io/badge/Download-FDroid-green.svg"/>
+    </a>
+    <a href="https://www.coolapk.com/apk/180063">
+        <img src="https://img.shields.io/badge/Download-CoolApk-green.svg"/>
     </a>
 </div>
 </br>
