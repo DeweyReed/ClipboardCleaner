@@ -23,8 +23,12 @@ fun Context.clean() {
     val clipboard = clipboard()
     fun clean() {
         if (clipboard.getClipContent(this).isNotEmpty()) {
-            clipboard.primaryClip = ClipData.newPlainText("text", "")
-            toast(R.string.toast_clipboard_cleaned)
+            clipboard.setPrimaryClip(ClipData.newPlainText("text", ""))
+            if (clipboard.getClipContent(this).isEmpty()) {
+                toast(R.string.toast_clipboard_cleaned)
+            } else {
+                toast(R.string.toast_clipboard_clean_failed)
+            }
         } else {
             toast(R.string.toast_clipboard_is_empty)
         }
@@ -86,7 +90,6 @@ fun Context.getRegexKeywords(): Set<String> = getSafeSharedPreference()
 
 fun Context.setRegexKeywords(set: Set<String>) = getSafeSharedPreference().edit()
     .putStringSet(PREF_KEYWORD_REGEX, set).apply()
-
 
 private const val PREF_CLEAN_TIMEOUT = "pref_clean_timeout"
 

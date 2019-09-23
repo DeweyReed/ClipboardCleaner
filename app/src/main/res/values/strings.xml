@@ -1,6 +1,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">ClipboardCleaner</string>
     <string name="toast_clipboard_cleaned">Clipboard has been cleaned</string>
+    <string name="toast_clipboard_clean_failed">Clipboard clean failed</string>
     <string name="toast_clipboard_is_empty">Clipboard is empty</string>
     <string name="toast_clipboard_nothing">Nothing needs to be cleaned</string>
 
