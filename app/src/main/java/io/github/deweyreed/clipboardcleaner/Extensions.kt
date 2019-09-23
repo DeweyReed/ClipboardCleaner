@@ -7,7 +7,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
-import android.preference.PreferenceManager
 import android.text.InputType
 import android.widget.EditText
 import android.widget.Toast
@@ -18,6 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
+import androidx.preference.PreferenceManager
 
 /**
  * Created on 2018/3/8.

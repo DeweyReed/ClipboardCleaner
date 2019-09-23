@@ -28,8 +28,7 @@ class IntentActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
-            val action = intent?.action
-            when (action) {
+            when (intent?.action) {
                 ACTION_CLEAN -> clean()
                 ACTION_CONTENT -> content()
             }
