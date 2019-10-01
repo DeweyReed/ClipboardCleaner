@@ -7,22 +7,28 @@
 <div align="center">
   <strong>Check and clean your clipboard using service, widget, shortcut, and quick setting tile.</strong>
 </div>
-</br>
+<br>
 <div align="center">
-    <a href="https://play.google.com/store/apps/details?id=io.github.deweyreed.clipboardcleaner">
+  <a href="https://travis-ci.org/DeweyReed/ClipboardCleaner" target="_blank">
+        <img src="https://travis-ci.org/DeweyReed/ClipboardCleaner.svg?branch=master"/>
+  </a>
+</div>
+<br>
+<div align="center">
+    <a href="https://play.google.com/store/apps/details?id=io.github.deweyreed.clipboardcleaner" target="_blank">
         <img src="https://img.shields.io/badge/Download-PlayStore-green.svg"/>
     </a>
-    <a href="https://github.com/DeweyReed/ClipboardCleaner/releases">
+    <a href="https://github.com/DeweyReed/ClipboardCleaner/releases" target="_blank">
         <img src="https://img.shields.io/badge/Download-Github-green.svg"/>
     </a>
-    <a href="https://f-droid.org/en/packages/io.github.deweyreed.clipboardcleaner/">
+    <a href="https://f-droid.org/en/packages/io.github.deweyreed.clipboardcleaner/" target="_blank">
         <img src="https://img.shields.io/badge/Download-FDroid-green.svg"/>
     </a>
-    <a href="https://www.coolapk.com/apk/180063">
+    <a href="https://www.coolapk.com/apk/180063" target="_blank">
         <img src="https://img.shields.io/badge/Download-CoolApk-green.svg"/>
     </a>
 </div>
-</br>
+<br>
 
 ## Screenshot
 
