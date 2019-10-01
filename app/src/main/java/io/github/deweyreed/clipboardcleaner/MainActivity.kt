@@ -3,8 +3,10 @@ package io.github.deweyreed.clipboardcleaner
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.text.InputType
+import android.text.TextUtils
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         setUpService()
         setUpShortcut()
         setUpSetting()
+        setUpWarnings()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -43,10 +46,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.action_help -> {
-                AlertDialog.Builder(this)
-                    .setMessage(R.string.help_content)
-                    .setPositiveButton(android.R.string.ok, null)
-                    .show()
+                showFailureReasonsDialog()
                 return true
             }
         }
@@ -236,5 +236,31 @@ class MainActivity : AppCompatActivity() {
             setRegexKeywords(layoutKeywordRegex.getKeywords())
             toast(R.string.setting_message_saved)
         }
+    }
+
+    private fun setUpWarnings() {
+        val sp = getSafeSharedPreference()
+        val warningKey = "show_warning"
+        if (sp.getBoolean(warningKey, true)) {
+            sp.edit().putBoolean(warningKey, false).apply()
+            showFailureReasonsDialog()
+        }
+    }
+
+    private fun showFailureReasonsDialog() {
+        val items = mutableListOf<CharSequence>()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            items.add(getText(R.string.warning_q))
+            items.add("\n\n")
+        }
+        items.add(getText(R.string.warning_other_apps))
+        val content = TextUtils.concat(*items.toTypedArray())
+
+        AlertDialog.Builder(this)
+            .setCancelable(false)
+            .setTitle(R.string.warning_title)
+            .setMessage(content)
+            .setPositiveButton(R.string.warning_keep_using, null)
+            .show()
     }
 }

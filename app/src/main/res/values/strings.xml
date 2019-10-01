@@ -63,7 +63,9 @@
     <string name="setting_keyword_add_a11y" translatable="false">Add a new keyword</string>
     <string name="setting_keyword_remove_a11y" translatable="false">Remove keyword %s</string>
 
-    <string name="help_title">Help</string>
-    <string name="help_content">\"The clipboard holds only one clip object at a time. When an application puts a clip object on the clipboard, the previous clip object disappears.\"\n\nIf you\'re seeing multiple clips or the clip history, it means something like a soft keyboard app stores them. In this case, this app is incompetent.</string>
+    <string name="warning_title">Possible reasons for the app failure</string>
+    <string name="warning_q">From Android 10(Q), Non-input-method apps <b>can\'t get, modify, and listen to the clipboard in the background</b>. Your phone is safer and doesn\'t need this app anymore.</string>
+    <string name="warning_other_apps">If you\'re seeing multiple clips or the clip history, it means something like <b>a soft keyboard app stores them</b>. In this case, this app fails.</string>
+    <string name="warning_keep_using">Continue to Use</string>
 
 </resources>
