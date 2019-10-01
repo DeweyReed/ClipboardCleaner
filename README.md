@@ -45,6 +45,7 @@ Fortunately, Android has AutoFill or other mechanisms to handle sensitive info. 
 
   - Target Android Q
   - Show reasons for the app failure when the app is installed for the first time.
+  - Fix Android 4.X crashes
 
 - 1.3.0
 
