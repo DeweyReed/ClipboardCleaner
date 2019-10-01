@@ -31,7 +31,7 @@
 
     <string name="service_clean_timeout_template" formatted="false">Clean the clipboard after %s (click here to edit)</string>
     <string name="service_clean_timeout">Timeout</string>
-    <string name="service_clean_after_seconds_template">Clipboard will be cleaned in %d seconds</string>
+    <string name="service_clean_after_seconds_template">Clipboard will be cleaned in %s.</string>
 
     <plurals name="seconds">
         <item quantity="one">1 second</item>

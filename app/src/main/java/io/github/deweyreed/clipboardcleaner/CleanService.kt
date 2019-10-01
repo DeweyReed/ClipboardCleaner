@@ -12,6 +12,7 @@ import android.os.Handler
 import android.os.IBinder
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
+import java.text.NumberFormat
 
 @Suppress("MemberVisibilityCanBePrivate")
 class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
@@ -94,7 +95,15 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
                 cleanHandler.postDelayed({
                     clean()
                 }, timeout * 1_000L)
-                toast(getString(R.string.service_clean_after_seconds_template).format(timeout))
+                toast(
+                    getString(R.string.service_clean_after_seconds_template).format(
+                        resources.getQuantityString(
+                            R.plurals.seconds,
+                            timeout,
+                            NumberFormat.getInstance().format(timeout)
+                        )
+                    )
+                )
             }
         } else if (option == SERVICE_OPTION_CONTENT) {
             content()
