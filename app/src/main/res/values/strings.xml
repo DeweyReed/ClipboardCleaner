@@ -68,4 +68,6 @@
     <string name="warning_other_apps">If you\'re seeing multiple clips or the clip history, it means something like <b>a soft keyboard app stores them</b>. In this case, this app fails.</string>
     <string name="warning_keep_using">Continue to Use</string>
 
+    <string name="source_code">Source Code</string>
+
 </resources>

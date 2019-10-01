@@ -6,4 +6,10 @@
         android:icon="@drawable/ic_help"
         android:title="@string/warning_title"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_source"
+        android:title="@string/source_code"
+        app:showAsAction="never" />
+
 </menu>

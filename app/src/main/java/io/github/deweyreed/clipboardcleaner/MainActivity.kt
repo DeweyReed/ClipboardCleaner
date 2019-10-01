@@ -2,7 +2,9 @@ package io.github.deweyreed.clipboardcleaner
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.InputType
@@ -43,14 +45,24 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
-            R.id.action_help -> {
-                showFailureReasonsDialog()
-                return true
-            }
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean = when (item?.itemId) {
+        R.id.action_help -> {
+            showFailureReasonsDialog()
+            true
         }
-        return false
+        R.id.action_source -> {
+            try {
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://github.com/DeweyReed/ClipboardCleaner")
+                    )
+                )
+            } catch (e: Exception) {
+            }
+            true
+        }
+        else -> false
     }
 
     override fun onRequestPermissionsResult(
