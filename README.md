@@ -41,7 +41,7 @@ Fortunately, Android has AutoFill or other mechanisms to handle sensitive info. 
 
 ## Update
 
-- 1.4.0
+- 1.4.1
 
   - Target Android Q
   - Show reasons for the app failure when the app is installed for the first time.
