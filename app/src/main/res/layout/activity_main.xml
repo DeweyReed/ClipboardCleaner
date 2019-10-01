@@ -33,7 +33,7 @@
                     android:contentDescription="@string/app_name"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
-                    android:src="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@mipmap/ic_launcher_round" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -372,7 +372,7 @@
                         android:layout_gravity="end"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:contentDescription="@string/setting_keyword_add_a11y"
-                        android:src="@drawable/ic_add" />
+                        app:srcCompat="@drawable/ic_add" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -394,7 +394,7 @@
                         android:layout_gravity="end"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:contentDescription="@string/setting_keyword_add_a11y"
-                        android:src="@drawable/ic_add" />
+                        app:srcCompat="@drawable/ic_add" />
 
                     <Button
                         android:id="@+id/btnKeywordSave"
