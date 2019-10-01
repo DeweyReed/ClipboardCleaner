@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/DeweyReed/ClipboardCleaner/blob/master/image/ic_launcher-web.png?raw=true" height="128" />
+  <img src="./image/ic_launcher-web.webp" height="128" />
 </div>
 
 <h1 align="center">Clipboard Cleaner</h1>
@@ -28,7 +28,7 @@
 
 ||||
 |:-:|:-:|:-:|
-|![screenshot1](./image/screenshot_1.png)|![screenshot2](./image/screenshot_2.png)|![screenshot3](./image/screenshot_3.png)|
+|![screenshot1](./image/screenshot_1.webp)|![screenshot2](./image/screenshot_2.webp)|![screenshot3](./image/screenshot_3.webp)|
 
 ## Why
 
@@ -65,4 +65,4 @@ Fortunately, Android has AutoFill or other mechanisms to handle sensitive info. 
 
 ## License
 
-[MIT License](https://github.com/DeweyReed/ClipboardCleaner/blob/master/LICENSE)
+[MIT License](./LICENSE)
