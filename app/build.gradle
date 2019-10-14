@@ -16,6 +16,9 @@ android {
         vectorDrawables.useSupportLibrary true
     }
     buildTypes {
+        debug {
+            applicationIdSuffix '.dev'
+        }
         release {
             minifyEnabled true
             shrinkResources true
