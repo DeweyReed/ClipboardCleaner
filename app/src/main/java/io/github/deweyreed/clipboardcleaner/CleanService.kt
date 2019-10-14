@@ -92,6 +92,7 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
             if (timeout <= 0) {
                 clean()
             } else {
+                cleanHandler.removeCallbacksAndMessages(null)
                 cleanHandler.postDelayed({
                     clean()
                 }, timeout * 1_000L)
