@@ -46,6 +46,10 @@ Fortunately, Android has AutoFill or other mechanisms to handle sensitive info. 
 
 ## Update
 
+- 1.4.2
+
+  - Reset the clean timer when a new text is copied.
+
 - 1.4.1
 
   - Target Android Q
