@@ -61,8 +61,8 @@
     <string name="setting_keyword_regex_title">正则</string>
 
     <string name="warning_title">应用失效的可能原因</string>
-    <string name="warning_q">从Android 10(Q)开始，非输入法应用<b>不能在后台获取、修改和监听剪贴板</b>，你的手机更安全了，也不需要这个应用啦。</string>
-    <string name="warning_other_apps">如果您可以看到多条剪贴板内容或历史，这意味着可能是<b>输入法等应用保存了它们</b>。这种情况下，本应用无能为力。</string>
+    <string name="warning_q">从Android 10(Q)开始，非输入法应用<b>不能在后台获取、修改和监听剪贴板</b>。本应用虽尽其最大努力，但仍然可能失效，并且监听剪贴板变化的功能暂不可用。<b>请在使用前自行测试</b>。</string>
+    <string name="warning_other_apps">如果您可以看到多条剪贴板内容或历史，这意味着可能是<b>输入法等应用保存了它们</b>。本应用因为无法修改其他应用的数据，因此在这种情况下失效。</string>
     <string name="warning_keep_using">继续使用</string>
 
     <string name="source_code">源代码</string>
