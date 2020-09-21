@@ -38,6 +38,24 @@ class MainActivity : AppCompatActivity() {
         setUpShortcut()
         setUpSetting()
         setUpWarnings()
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            /**
+             * I know there are two ways to enable clipboard detection on Android Q and later.
+             *
+             * 1. AccessibilityService. It can almost do anything.
+             *
+             * 2. Read logs.
+             *
+             *    1. Request READ_LOGS permission and grant it to the app using ADB.
+             *    2. Read system logs constantly to find the log that the system prints after denying
+             *    clipboard detection.
+             *    3. Read or write the clipboard while showing a system alert window.
+             *
+             * Since I don't have too much to implement it, I'll hide service for now.
+             */
+            cardService.visibility = View.GONE
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -219,8 +237,8 @@ class MainActivity : AppCompatActivity() {
             (0..childCount).forEach {
                 getChildAt(it)?.findViewById<TextView>(R.id.textKeywordContent)
                     ?.text?.toString()?.let { keyword ->
-                    keywords.add(keyword)
-                }
+                        keywords.add(keyword)
+                    }
             }
             return keywords.toSet()
         }

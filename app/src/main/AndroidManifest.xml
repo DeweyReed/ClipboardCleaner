@@ -13,7 +13,11 @@
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
+    <!--It seems we don't need this permission when accessing the clipboard in an activity.-->
+    <!--<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />-->
+
     <application
+        android:name=".ClipboardCleaner"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"

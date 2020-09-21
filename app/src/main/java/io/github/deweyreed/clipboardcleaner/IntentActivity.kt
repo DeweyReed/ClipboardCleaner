@@ -29,8 +29,16 @@ class IntentActivity : Activity() {
         try {
             super.onCreate(savedInstanceState)
             when (intent?.action) {
-                ACTION_CLEAN -> clean()
-                ACTION_CONTENT -> content()
+                ACTION_CLEAN -> {
+                    withSystemAlertWindow(this) {
+                        clean()
+                    }
+                }
+                ACTION_CONTENT -> {
+                    withSystemAlertWindow(this) {
+                        content()
+                    }
+                }
             }
         } finally {
             finish()
