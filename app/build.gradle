@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'de.timfreiheit.resourceplaceholders.plugin'
+
 android {
     compileSdkVersion 30
     defaultConfig {
@@ -24,6 +26,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+resourcePlaceholders {
+    files = ['xml/shortcuts.xml']
 }
 
 dependencies {

@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shortcuts />
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_broom"
+        android:shortcutDisabledMessage="@string/shortcut_disabled"
+        android:shortcutId="clean"
+        android:shortcutLongLabel="@string/action_clipboard_clean"
+        android:shortcutShortLabel="@string/action_clipboard_clean_short">
+        <intent
+            android:action="io.github.deweyreed.clipboardcleaner.action.CLEAN"
+            android:targetClass="io.github.deweyreed.clipboardcleaner.IntentActivity"
+            android:targetPackage="${applicationId}" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_clipboard"
+        android:shortcutDisabledMessage="@string/shortcut_disabled"
+        android:shortcutId="content"
+        android:shortcutLongLabel="@string/action_clipboard_content"
+        android:shortcutShortLabel="@string/action_clipboard_content_short">
+        <intent
+            android:action="io.github.deweyreed.clipboardcleaner.action.CONTENT"
+            android:targetClass="io.github.deweyreed.clipboardcleaner.IntentActivity"
+            android:targetPackage="${applicationId}" />
+    </shortcut>
+</shortcuts>
