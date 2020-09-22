@@ -9,8 +9,8 @@
 </div>
 <br>
 <div align="center">
-  <a href="https://travis-ci.org/DeweyReed/ClipboardCleaner" target="_blank">
-        <img src="https://travis-ci.org/DeweyReed/ClipboardCleaner.svg?branch=master"/>
+  <a href="https://github.com/DeweyReed/ClipboardCleaner/actions" target="_blank">
+        <img src="https://github.com/DeweyReed/ClipboardCleaner/workflows/Android%20CI/badge.svg"/>
   </a>
 </div>
 <div align="center">

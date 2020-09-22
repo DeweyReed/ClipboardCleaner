@@ -1,0 +1,40 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repo
+        uses: actions/checkout@v2.2.0
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.3.0
+        with:
+          java-version: 1.8
+
+      # https://github.com/actions/cache/blob/master/examples.md#java---gradle
+      - name: Cache
+        uses: actions/cache@v2.0.0
+        id: cache
+        with:
+          path: |
+            ~/.m2
+            ~/.gradle/caches
+            ~/.gradle/wrapper/
+            ~/.android/build-cache
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      # git update-index --chmod=+x gradlew
+      - name: Build with Gradle
+        run: ./gradlew clean build
