@@ -16,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="4dp"
             app:cardElevation="8dp">
 
@@ -75,7 +74,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="4dp"
             app:cardElevation="8dp">
 
@@ -169,7 +167,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="4dp"
             app:cardElevation="8dp">
 
@@ -206,7 +203,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="4dp"
             app:cardElevation="8dp">
 
@@ -264,7 +260,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="4dp"
             app:cardElevation="8dp">
 
@@ -302,7 +297,6 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="4dp"
             app:cardElevation="8dp"
             app:contentPaddingBottom="16dp">
@@ -373,7 +367,8 @@
                         android:layout_gravity="end"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:contentDescription="@string/setting_keyword_add_a11y"
-                        app:srcCompat="@drawable/ic_add" />
+                        app:srcCompat="@drawable/ic_add"
+                        app:tint="?colorControlNormal" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -395,7 +390,8 @@
                         android:layout_gravity="end"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:contentDescription="@string/setting_keyword_add_a11y"
-                        app:srcCompat="@drawable/ic_add" />
+                        app:srcCompat="@drawable/ic_add"
+                        app:tint="?colorControlNormal" />
 
                     <Button
                         android:id="@+id/btnKeywordSave"
