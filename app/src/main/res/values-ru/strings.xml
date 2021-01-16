@@ -1,0 +1,73 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">ЧисткаБуфера</string>
+    <string name="toast_clipboard_cleaned">Буфер обмена очищен</string>
+    <string name="toast_clipboard_clean_failed">Не удалось очистить буфер обмена</string>
+    <string name="toast_clipboard_is_empty">Буфер обмена пуст</string>
+    <string name="toast_clipboard_nothing">Ничего не нужно чистить</string>
+
+    <string name="action_clipboard_clean">Очистить буфер</string>
+    <string name="action_clipboard_clean_short">Очистить</string>
+    <string name="action_clipboard_content">Показать буфер</string>
+    <string name="action_clipboard_content_short">Содержимое</string>
+
+    <string name="shortcut_disabled">Отключен</string>
+
+    <string name="introduction">ЧисткаБуфера предназначена для предотвращения случайного использования буфера обмена, защиты скопированного пароля и защиты вашей конфиденциальности!</string>
+
+    <string name="service_title">Служба</string>
+    <string name="service_content">Создайте службу, работающую в фоновом режиме. Сбрасывает буфер обмена, если он изменился, или уведомляет Вас. Это решение эффективно, но разряжает аккумулятор.</string>
+    <string name="service_clean">Очищать буфер обмена, если он изменён</string>
+    <string name="service_report">Докладывать мне, если буфер обмена изменён</string>
+    <string name="service_status">Состояние: %s</string>
+    <string name="service_status_running">Запущена</string>
+    <string name="service_status_stopped">Остановлена</string>
+    <string name="service_start">Запустить службу</string>
+    <string name="service_stop">Остановить службу</string>
+    <string name="service_started">Служба чистки буфера запущена</string>
+    <string name="service_stopped">Служба чистки буфера остановлена</string>
+
+    <string name="service_channel_name">Канал уведомлений чистки буфера</string>
+    <string name="service_notif_title">Ваш буфер обмена находится под защитой</string>
+
+    <string name="service_clean_timeout_template" formatted="false">Очистить буфер обмена после %s (нажмите здесь для редактирования)</string>
+    <string name="service_clean_timeout">Перерыв</string>
+    <string name="service_clean_after_seconds_template">Буфер обмена будет очищен через %s.</string>
+
+    <plurals name="seconds">
+        <item quantity="one">1 секунда</item>
+        <item quantity="other"><xliff:g example="7" id="number">%s</xliff:g> секунды</item>
+    </plurals>
+
+    <string name="widget_title">Виджет</string>
+    <string name="widget_content">Создайте виджеты на главном экране. Щёлкните по ним, чтобы сбросить буфер обмена или просмотреть содержимое буфера. Вы можете найти их в списке виджетов.</string>
+
+    <string name="shortcut_title">Ярлык</string>
+    <string name="shortcut_content">Создайте ярлык приложения на главном экране. Щёлкните по нему, чтобы сбросить буфер обмена или просмотреть содержимое буфера.</string>
+    <string name="shortcut_create_clean">Добавить ярлык \"Очистка\"</string>
+    <string name="shortcut_create_content">Добавить ярлык \"Показать содержимое\"</string>
+    <string name="shortcut_no_permission">У приложения недостаточно разрешений</string>
+    <string name="shortcut_have_permission">Разрешение получено! Пожалуйста, создайте теперь ярлыки.</string>
+
+    <string name="tile_title">Плитка быстрой настройки</string>
+    <string name="tile_content">Добавьте плитку быстрой настройки на панель уведомлений. Щёлкните по ней, чтобы сбросить буфер обмена или просмотреть его содержимое. Вы можете найти их на экране редактирования быстрых настроек.</string>
+
+    <string name="setting_title">Настройка</string>
+    <string name="setting_action_save">Сохранить</string>
+    <string name="setting_message_saved">Сохранено</string>
+
+    <string name="setting_keyword_title">Фильтр ключевых слов</string>
+    <string name="setting_keyword_content">Если этот параметр включен, ЧисткаБуфера будет очищать только содержимое, содержащее ключевые слова.</string>
+
+    <string name="setting_keyword_normal_title">Ключевое слово</string>
+    <string name="setting_keyword_regex_title">Регулярное выражение</string>
+    <string name="setting_keyword_add_a11y" translatable="false">Добавить новое ключевое слово</string>
+    <string name="setting_keyword_remove_a11y" translatable="false">Удалить ключевое слово %s</string>
+
+    <string name="warning_title">Возможные причины сбоя приложения</string>
+    <string name="warning_q">Начиная с Android 10 (Q), приложения без методов ввода <b>не могут получать, изменять и прослушивать буфер обмена в фоновом режиме </b>. Хотя это приложение старается изо всех сил, оно все равно может потерпеть неудачу, так что прослушивание изменений буфера обмена пока недоступно. <b>Перед использованием проверьте приложение самостоятельно.</b></string>
+    <string name="warning_other_apps">Если вы видите несколько буферов или историю буферов, это означает что-то вроде того, <b>что приложение клавиатуры хранит их </b>. В этом случае это приложение терпит сбой.</string>
+    <string name="warning_keep_using">Продолжить использование</string>
+
+    <string name="source_code">Исходный код</string>
+
+</resources>
