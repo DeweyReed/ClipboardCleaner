@@ -34,8 +34,10 @@
     <string name="service_clean_after_seconds_template">Буфер обмена будет очищен через %s.</string>
 
     <plurals name="seconds">
-        <item quantity="one">1 секунда</item>
-        <item quantity="other"><xliff:g example="7" id="number">%s</xliff:g> секунды</item>
+        <item quantity="one">%s секунда</item>
+        <item quantity="few">%s секунды</item>
+        <item quantity="many">%s секунд</item>
+        <item quantity="other">%s секунды</item>
     </plurals>
 
     <string name="widget_title">Виджет</string>
