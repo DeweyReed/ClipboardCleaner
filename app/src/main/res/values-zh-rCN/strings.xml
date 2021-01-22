@@ -59,6 +59,8 @@
 
     <string name="setting_keyword_normal_title">关键字</string>
     <string name="setting_keyword_regex_title">正则</string>
+    <string name="setting_keyword_add_a11y">添加关键字</string>
+    <string name="setting_keyword_remove_a11y">移除关键字 %s</string>
 
     <string name="warning_title">应用失效的可能原因</string>
     <string name="warning_q">从Android 10(Q)开始，非输入法应用<b>不能在后台获取、修改和监听剪贴板</b>。本应用虽尽其最大努力，但仍然可能失效，并且监听剪贴板变化的功能暂不可用。<b>请在使用前自行测试</b>。</string>

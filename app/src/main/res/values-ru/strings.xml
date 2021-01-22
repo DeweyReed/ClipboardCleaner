@@ -62,8 +62,8 @@
 
     <string name="setting_keyword_normal_title">Ключевое слово</string>
     <string name="setting_keyword_regex_title">Регулярное выражение</string>
-    <string name="setting_keyword_add_a11y" translatable="false">Добавить новое ключевое слово</string>
-    <string name="setting_keyword_remove_a11y" translatable="false">Удалить ключевое слово %s</string>
+    <string name="setting_keyword_add_a11y">Добавить новое ключевое слово</string>
+    <string name="setting_keyword_remove_a11y">Удалить ключевое слово %s</string>
 
     <string name="warning_title">Возможные причины сбоя приложения</string>
     <string name="warning_q">Начиная с Android 10 (Q), приложения без методов ввода <b>не могут получать, изменять и прослушивать буфер обмена в фоновом режиме </b>. Хотя это приложение старается изо всех сил, оно все равно может потерпеть неудачу, так что прослушивание изменений буфера обмена пока недоступно. <b>Перед использованием проверьте приложение самостоятельно.</b></string>

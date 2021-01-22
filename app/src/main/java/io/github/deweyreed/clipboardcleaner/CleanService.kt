@@ -10,6 +10,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Handler
 import android.os.IBinder
+import android.os.Looper
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import java.text.NumberFormat
@@ -67,7 +68,7 @@ class CleanService : Service(), ClipboardManager.OnPrimaryClipChangedListener {
         }
     }
 
-    private val cleanHandler: Handler by lazy { Handler() }
+    private val cleanHandler: Handler by lazy { Handler(Looper.getMainLooper()) }
 
     override fun onBind(intent: Intent?): IBinder? = null
 
