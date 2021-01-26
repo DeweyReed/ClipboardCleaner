@@ -1,0 +1,5 @@
+As you may know, Android clipboard content and its changes can be got by any app, which is a security hole if you care about it. Any app can get your copied password, credit card numbers, and more.
+
+Android has AutoFill or other mechanisms to handle sensitive info. Android Q also fixes this problem partly. But there are still some ways to bypass the limit, like using accessibility services and showing a transparent window.
+
+ClipboardCleaner can't protect your passwords from being got by any app. But it gives you ways to check and clean your clipboard.
