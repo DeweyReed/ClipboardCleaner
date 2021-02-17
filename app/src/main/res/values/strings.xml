@@ -17,7 +17,7 @@
     <string name="service_title">Service</string>
     <string name="service_content">Create a service running in the background. Reset your clipboard if it\'s changed or notify you. This solution is efficient but battery-draining.</string>
     <string name="service_clean">Clean clipboard if it\'s changed</string>
-    <string name="service_report">Report me if the clipboard\'s changed</string>
+    <string name="service_report">Report to me if the clipboard\'s changed</string>
     <string name="service_status">Status: %s</string>
     <string name="service_status_running">Running</string>
     <string name="service_status_stopped">Stopped</string>
