@@ -1,13 +1,20 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/viewWidgetClean"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:drawableTop="@drawable/ic_shortcut_broom"
-    android:gravity="center_horizontal"
-    android:maxLines="1"
-    android:padding="8dp"
-    android:text="@string/action_clipboard_clean_short"
-    android:textColor="@android:color/white"
-    android:textSize="12sp"
-    app:autoSizeTextType="uniform" />
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:autoSizeTextType="uniform"
+        android:drawableTop="@drawable/ic_shortcut_broom"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/action_clipboard_clean_short"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="12sp" />
+
+</FrameLayout>

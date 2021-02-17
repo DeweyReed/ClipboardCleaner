@@ -23,7 +23,7 @@ class CleanWidget : AppWidgetProvider() {
             val pi = context.pendingActivityIntent(
                 IntentActivity.activityIntent(context, ACTION_CLEAN)
             )
-            views.setOnClickPendingIntent(R.id.viewWidgetClean, pi)
+            views.setOnClickPendingIntent(R.id.layout, pi)
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }
     }

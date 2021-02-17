@@ -23,7 +23,7 @@ class ContentWidget : AppWidgetProvider() {
             val pi = context.pendingActivityIntent(
                 IntentActivity.activityIntent(context, ACTION_CONTENT)
             )
-            views.setOnClickPendingIntent(R.id.viewWidgetContent, pi)
+            views.setOnClickPendingIntent(R.id.layout, pi)
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }
     }
