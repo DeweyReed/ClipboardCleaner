@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Build
 import android.view.View
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatDelegate
 
 class ClipboardCleaner : Application() {
 
@@ -14,6 +15,14 @@ class ClipboardCleaner : Application() {
         super.onCreate()
 
         app = this
+
+        AppCompatDelegate.setDefaultNightMode(
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+            } else {
+                AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
+            }
+        )
     }
 
     fun showSystemAlertWindow(windowContext: Context) {
