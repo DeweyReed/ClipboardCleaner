@@ -21,14 +21,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_main.*
+import io.github.deweyreed.clipboardcleaner.databinding.ActivityMainBinding
 import java.text.NumberFormat
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         AppCompatDelegate.setDefaultNightMode(
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -39,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         if (!isNOrLater()) {
-            cardTile.visibility = View.GONE
+            binding.cardTile.visibility = View.GONE
         }
 
         setUpButtons()
@@ -63,7 +66,7 @@ class MainActivity : AppCompatActivity() {
              *
              * Since I don't have too much to implement it, I'll hide service for now.
              */
-            cardService.visibility = View.GONE
+            binding.cardService.visibility = View.GONE
         }
     }
 
@@ -107,10 +110,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpButtons() {
-        btnClean.setOnClickListener {
+        binding.btnClean.setOnClickListener {
             clean()
         }
-        btnContent.setOnClickListener {
+        binding.btnContent.setOnClickListener {
             content()
         }
     }
@@ -118,24 +121,24 @@ class MainActivity : AppCompatActivity() {
     private fun setUpService() {
         fun updateServiceStatus(started: Boolean) {
             if (started) {
-                textServiceStatus.text = getString(R.string.service_status)
+                binding.textServiceStatus.text = getString(R.string.service_status)
                     .format(getString(R.string.service_status_running))
-                btnServiceStart.text = getString(R.string.service_stop)
+                binding.btnServiceStart.text = getString(R.string.service_stop)
             } else {
-                textServiceStatus.text = getString(R.string.service_status)
+                binding.textServiceStatus.text = getString(R.string.service_status)
                     .format(getString(R.string.service_status_stopped))
-                btnServiceStart.text = getString(R.string.service_start)
+                binding.btnServiceStart.text = getString(R.string.service_start)
             }
         }
 
         val serviceOption = CleanService.getServiceOption(this)
         if (serviceOption == CleanService.SERVICE_OPTION_CLEAN) {
-            radioBtnClean.isChecked = true
+            binding.radioBtnClean.isChecked = true
         } else if (serviceOption == CleanService.SERVICE_OPTION_CONTENT) {
-            radioBtnReport.isChecked = true
+            binding.radioBtnReport.isChecked = true
         }
 
-        groupServiceOptions.setOnCheckedChangeListener { _, checkedId ->
+        binding.groupServiceOptions.setOnCheckedChangeListener { _, checkedId ->
             if (checkedId == R.id.radioBtnClean) {
                 CleanService.setServiceOption(this, CleanService.SERVICE_OPTION_CLEAN)
             } else if (checkedId == R.id.radioBtnReport) {
@@ -148,7 +151,7 @@ class MainActivity : AppCompatActivity() {
         updateServiceStatus(isServiceRunning)
         CleanService.setServiceStarted(this, isServiceRunning)
 
-        btnServiceStart.setOnClickListener {
+        binding.btnServiceStart.setOnClickListener {
             if (CleanService.getServiceStarted(this@MainActivity)) {
                 CleanService.stop(this@MainActivity)
                 updateServiceStatus(false)
@@ -160,7 +163,7 @@ class MainActivity : AppCompatActivity() {
 
         fun updateCleanTimeoutText() {
             val timeout = serviceCleanTimeout
-            textServiceCleanTimeout.text =
+            binding.textServiceCleanTimeout.text =
                 getString(R.string.service_clean_timeout_template).format(
                     resources.getQuantityString(
                         R.plurals.seconds,
@@ -171,7 +174,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         updateCleanTimeoutText()
-        textServiceCleanTimeout.setOnClickListener {
+        binding.textServiceCleanTimeout.setOnClickListener {
             requestInput(
                 R.string.service_clean_timeout,
                 InputType.TYPE_CLASS_NUMBER
@@ -201,12 +204,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        btnShortcutClean.setOnClickListener {
+        binding.btnShortcutClean.setOnClickListener {
             if (checkAndRequestShortcutPermission()) {
                 createCleanShortcut()
             }
         }
-        btnShortcutContent.setOnClickListener {
+        binding.btnShortcutContent.setOnClickListener {
             if (checkAndRequestShortcutPermission()) {
                 createContentShortcut()
             }
@@ -215,16 +218,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpSetting() {
         if (getUsingKeyword()) {
-            checkKeyword.isChecked = true
-            layoutKeywordSetting.visibility = View.VISIBLE
+            binding.checkKeyword.isChecked = true
+            binding.layoutKeywordSetting.visibility = View.VISIBLE
         }
 
-        checkKeyword.setOnCheckedChangeListener { _, isChecked ->
+        binding.checkKeyword.setOnCheckedChangeListener { _, isChecked ->
             setUsingKeyword(isChecked)
-            layoutKeywordSetting.visibility = if (isChecked) View.VISIBLE else View.GONE
+            binding.layoutKeywordSetting.visibility = if (isChecked) View.VISIBLE else View.GONE
             // Scroll to bottom after setting layout is shown
-            layoutMainScroll.postDelayed({
-                layoutMainScroll.fullScroll(View.FOCUS_DOWN)
+            binding.layoutMainScroll.postDelayed({
+                binding.layoutMainScroll.fullScroll(View.FOCUS_DOWN)
             }, 300)
         }
 
@@ -253,26 +256,26 @@ class MainActivity : AppCompatActivity() {
         }
 
         getNormalKeywords().forEach {
-            layoutKeywordNormal.addKeywordView(it)
+            binding.layoutKeywordNormal.addKeywordView(it)
         }
-        btnKeywordAddNormal.setOnClickListener {
+        binding.btnKeywordAddNormal.setOnClickListener {
             requestInput(R.string.setting_keyword_normal_title) {
-                layoutKeywordNormal.addKeywordView(it)
+                binding.layoutKeywordNormal.addKeywordView(it)
             }
         }
 
         getRegexKeywords().forEach {
-            layoutKeywordRegex.addKeywordView(it)
+            binding.layoutKeywordRegex.addKeywordView(it)
         }
-        btnKeywordAddRegex.setOnClickListener {
+        binding.btnKeywordAddRegex.setOnClickListener {
             requestInput(R.string.setting_keyword_normal_title) {
-                layoutKeywordRegex.addKeywordView(it)
+                binding.layoutKeywordRegex.addKeywordView(it)
             }
         }
 
-        btnKeywordSave.setOnClickListener {
-            setNormalKeywords(layoutKeywordNormal.getKeywords())
-            setRegexKeywords(layoutKeywordRegex.getKeywords())
+        binding.btnKeywordSave.setOnClickListener {
+            setNormalKeywords(binding.layoutKeywordNormal.getKeywords())
+            setRegexKeywords(binding.layoutKeywordRegex.getKeywords())
             toast(R.string.setting_message_saved)
         }
     }
