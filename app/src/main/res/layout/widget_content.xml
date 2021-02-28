@@ -14,7 +14,7 @@
         android:gravity="center"
         android:maxLines="1"
         android:text="@string/action_clipboard_content_short"
-        android:textColor="?android:textColorPrimary"
+        android:textColor="@android:color/white"
         android:textSize="12sp" />
 
 </FrameLayout>
