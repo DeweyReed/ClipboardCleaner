@@ -34,7 +34,7 @@
     <string name="service_clean_after_seconds_template">O Clipboard será esvaziado em %s.</string>
 
     <plurals name="seconds">
-        <item quantity="one">1 segundo</item>
+        <item quantity="one"> segundo</item>
         <item quantity="other"><xliff:g example="7" id="number">%s</xliff:g> segundos</item>
     </plurals>
 
