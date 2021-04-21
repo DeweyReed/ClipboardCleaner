@@ -20,6 +20,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.edit
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import io.github.deweyreed.clipboardcleaner.databinding.ActivityMainBinding
 import java.text.NumberFormat
 
@@ -57,7 +60,25 @@ class MainActivity : AppCompatActivity() {
              *
              * Since I don't have too much to implement it, I'll hide service for now.
              */
-            binding.cardService.visibility = View.GONE
+            binding.cardService.isGone = true
+
+            // Click the title card 7 times to show the service card.
+            // Some root users can make the service work.
+            val showServerCardKey = "show_service_card"
+            val sp = getSafeSharedPreference()
+            if (sp.getBoolean(showServerCardKey, false)) {
+                binding.cardService.isVisible = true
+            } else {
+                var times = 0
+                binding.imageTitle.setOnClickListener {
+                    if (++times == 7) {
+                        sp.edit {
+                            putBoolean(showServerCardKey, true)
+                        }
+                        binding.cardService.isVisible = true
+                    }
+                }
+            }
         }
     }
 
