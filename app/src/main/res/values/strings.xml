@@ -51,6 +51,10 @@
     <string name="tile_title">Quick Setting Tile</string>
     <string name="tile_content">Add a Quick Setting Tile to your notification bar. Click them to reset clipboard or see clipboard content. \n\nYou can find them in the quick settings edit screen.</string>
 
+    <string name="assistant_title">System Assistant App</string>
+    <string name="assistant_content">Set this app as the system assistant app and use it by long-pressing the home button or swiping from the bottom corners.</string>
+    <string name="assistant_open_settings">Open assistant settings</string>
+
     <string name="setting_title">Setting</string>
     <string name="setting_action_save">Save</string>
     <string name="setting_message_saved">Saved</string>

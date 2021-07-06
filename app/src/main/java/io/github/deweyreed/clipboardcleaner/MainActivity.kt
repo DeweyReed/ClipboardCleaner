@@ -7,6 +7,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.text.InputType
 import android.text.TextUtils
 import android.view.Menu
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         setUpButtons()
         setUpService()
         setUpShortcut()
+        setUpAssistant()
         setUpSetting()
         setUpWarnings()
 
@@ -225,6 +227,31 @@ class MainActivity : AppCompatActivity() {
             if (checkAndRequestShortcutPermission()) {
                 createContentShortcut()
             }
+        }
+    }
+
+    private fun setUpAssistant() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            binding.cardSystemAssist.isGone = true
+            return
+        }
+
+        binding.btnOpenAssistantSettings.setOnClickListener {
+            try {
+                startActivity(Intent(Settings.ACTION_VOICE_INPUT_SETTINGS))
+            } catch (e: Exception) {
+                // Ignore
+            }
+        }
+
+        if (assistantAction == ACTION_CLEAN) {
+            binding.ratioAssistantClean.isChecked = true
+        } else {
+            binding.ratioAssistantContent.isChecked = true
+        }
+        binding.ratioGroupAssistant.setOnCheckedChangeListener { _, checkedId ->
+            assistantAction =
+                if (checkedId == R.id.ratioAssistantClean) ACTION_CLEAN else ACTION_CONTENT
         }
     }
 

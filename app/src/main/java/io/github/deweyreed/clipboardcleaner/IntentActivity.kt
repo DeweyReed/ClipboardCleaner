@@ -39,6 +39,20 @@ class IntentActivity : Activity() {
                         content()
                     }
                 }
+                else -> {
+                    when (assistantAction) {
+                        ACTION_CLEAN -> {
+                            withSystemAlertWindow(this) {
+                                clean()
+                            }
+                        }
+                        ACTION_CONTENT -> {
+                            withSystemAlertWindow(this) {
+                                content()
+                            }
+                        }
+                    }
+                }
             }
         } finally {
             finish()
