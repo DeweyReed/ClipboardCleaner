@@ -99,6 +99,6 @@ var Context.serviceCleanTimeout: Int
     get() = getSafeSharedPreference().getInt(PREF_CLEAN_TIMEOUT, 0)
     set(value) = getSafeSharedPreference().edit().putInt(PREF_CLEAN_TIMEOUT, value).apply()
 
-var Context.assistantAction: String?
-    get() = getSafeSharedPreference().getString(PREF_ASSISTANT_ACTION, null)
+var Context.assistantAction: String
+    get() = getSafeSharedPreference().getString(PREF_ASSISTANT_ACTION, ACTION_CLEAN) ?: ACTION_CLEAN
     set(value) = getSafeSharedPreference().edit { putString(PREF_ASSISTANT_ACTION, value) }
