@@ -4,6 +4,7 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import androidx.annotation.StringDef
+import androidx.core.content.edit
 
 /**
  * Created on 2018/3/14.
@@ -72,6 +73,7 @@ private fun ClipboardManager.getClipContent(context: Context): String = primaryC
 private const val PREF_USE_KEYWORD = "pref_use_keyword"
 private const val PREF_KEYWORD_NORMAL = "pref_keyword_normal"
 private const val PREF_KEYWORD_REGEX = "pref_keyword_regex"
+private const val PREF_ASSISTANT_ACTION = "pref_assistant_action"
 
 fun Context.getUsingKeyword(): Boolean = getSafeSharedPreference()
     .getBoolean(PREF_USE_KEYWORD, false)
@@ -96,3 +98,7 @@ private const val PREF_CLEAN_TIMEOUT = "pref_clean_timeout"
 var Context.serviceCleanTimeout: Int
     get() = getSafeSharedPreference().getInt(PREF_CLEAN_TIMEOUT, 0)
     set(value) = getSafeSharedPreference().edit().putInt(PREF_CLEAN_TIMEOUT, value).apply()
+
+var Context.assistantAction: String
+    get() = getSafeSharedPreference().getString(PREF_ASSISTANT_ACTION, ACTION_CLEAN) ?: ACTION_CLEAN
+    set(value) = getSafeSharedPreference().edit { putString(PREF_ASSISTANT_ACTION, value) }

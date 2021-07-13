@@ -50,6 +50,10 @@
     <string name="tile_title">快速设置</string>
     <string name="tile_content">在通知栏添加快速设置。点击清空剪贴板或显示其内容。\n\n你可以在快速设置的编辑界面找到它们。</string>
 
+    <string name="assistant_title">助理应用</string>
+    <string name="assistant_content">将本应用设置为系统助理应用，然后通过长按Home键或从底部角落滑动来使用。</string>
+    <string name="assistant_open_settings">打开助理应用设置</string>
+
     <string name="setting_title">应用设置</string>
     <string name="setting_action_save">保存</string>
     <string name="setting_message_saved">保存完毕</string>

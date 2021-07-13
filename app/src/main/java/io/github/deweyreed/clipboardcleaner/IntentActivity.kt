@@ -1,9 +1,11 @@
 package io.github.deweyreed.clipboardcleaner
 
 import android.app.Activity
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 
 /**
  * Created on 2018/3/9.
@@ -28,15 +30,31 @@ class IntentActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         try {
             super.onCreate(savedInstanceState)
-            when (intent?.action) {
-                ACTION_CLEAN -> {
+            when {
+                intent?.action == ACTION_CLEAN -> {
                     withSystemAlertWindow(this) {
                         clean()
                     }
                 }
-                ACTION_CONTENT -> {
+                intent?.action == ACTION_CONTENT -> {
                     withSystemAlertWindow(this) {
                         content()
+                    }
+                }
+                Settings.Secure.getString(contentResolver, "assistant").let {
+                    it != null && ComponentName.unflattenFromString(it)?.packageName == packageName
+                } -> {
+                    when (assistantAction) {
+                        ACTION_CLEAN -> {
+                            withSystemAlertWindow(this) {
+                                clean()
+                            }
+                        }
+                        ACTION_CONTENT -> {
+                            withSystemAlertWindow(this) {
+                                content()
+                            }
+                        }
                     }
                 }
             }
