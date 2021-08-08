@@ -12,10 +12,10 @@
 
     <string name="shortcut_disabled">Desativado</string>
 
-    <string name="introduction">ClipboardCleaner tenta evitar que seu Clipboard seja usado indevidamente. Proteja suas senhas copiadas e defenda sua privacidade!</string>
+    <string name="introduction">ClipboardCleaner tenta evitar que seu Clipboard seja usado indevidamente. Proteja suas senhas copiadas ao memória e mantenha sua privacidade!</string>
 
     <string name="service_title">Serviço</string>
-    <string name="service_content">Cria um serviço executado em segundo plano. Esvazia seu Clipboard quando for alterado ou notifica sobre isto. Esta solução é eficiente, mas drena a bateria.</string>
+    <string name="service_content">Cria um serviço que é executado em segundo plano. Esvazia seu Clipboard quando for alterado ou notifica sobre isto. Esta solução é eficiente, mas drena a bateria.</string>
     <string name="service_clean">Limpar o Clipboard quando for alterado</string>
     <string name="service_report">Avisa-me quando o Clipboard for alterado</string>
     <string name="service_status">Status: %s</string>
@@ -27,7 +27,7 @@
     <string name="service_stopped">ClipboardCleaner parou</string>
 
     <string name="service_channel_name">Canal de notificações do ClipboardCleaner</string>
-    <string name="service_notif_title">Seu Clipboard está sob a proteção</string>
+    <string name="service_notif_title">Seu Clipboard está sendo protegido</string>
 
     <string name="service_clean_timeout_template" formatted="false">Limpar o Clipboard após %s (clique aqui para editar)</string>
     <string name="service_clean_timeout">Intervalo</string>
@@ -39,17 +39,21 @@
     </plurals>
 
     <string name="widget_title">Widget</string>
-    <string name="widget_content">Crie os Widgets na sua tela inicial. Clique neles para esvaziar o Clipboard ou ver o conteúdo dele. \n\nVocê pode encontrá-los na lista dos Widgets.</string>
+    <string name="widget_content">Crie os Widgets na sua tela inicial. Clique neles para esvaziar ou ver um conteúdo do Clipboard. \n\nVocê pode encontrá-los na lista de Widgets.</string>
 
     <string name="shortcut_title">Atalho</string>
-    <string name="shortcut_content">Crie um atalho do App na sua tela inicial. Clique nele para esvaziar o Clipboard ou ver o conteúdo dele.</string>
-    <string name="shortcut_create_clean">Adicionar atalho de \"Esvaziar\"</string>
-    <string name="shortcut_create_content">Adicionar atalho de \"Mostrar conteúdo\"</string>
-    <string name="shortcut_no_permission">O App não tem suficientes permissões</string>
+    <string name="shortcut_content">Crie um atalho do App na sua tela inicial. Clique nele para limpar o Clipboard ou ver um conteúdo dele.</string>
+    <string name="shortcut_create_clean">Adicionar atalho de \"Limpar\"</string>
+    <string name="shortcut_create_content">Adicionar atalho de \"Conteúdo do Clipboard\"</string>
+    <string name="shortcut_no_permission">O App não tem permissões suficientes</string>
     <string name="shortcut_have_permission">Permissão concedida! Por favor, crie atalhos agora.</string>
 
-    <string name="tile_title">Botão de ajuste rápido</string>
-    <string name="tile_content">Adicione um botão de ajuste rápido à sua barra de notificações. Clique nele para esvaziar o Clipboard ou ver o conteúdo dele. \n\nVocê pode encontrá-los em configurações de edição rápida.</string>
+    <string name="tile_title">Botão de menu rápido</string>
+    <string name="tile_content">Adicione um botão de acesso rápido à sua barra de notificações. Clique nele para esvaziar o Clipboard ou ver o conteúdo dele. \n\nVocê pode encontrá-los em configurações do menu rápido.</string>
+
+    <string name="assistant_title">O app de assistente do sistema</string>
+    <string name="assistant_content">Definir este App como app de assistente do sistema e utilizá-lo clicando no botão de início via clique longo ou deslizando de baixo.</string>
+    <string name="assistant_open_settings">Abrir configurações do assistente</string>
 
     <string name="setting_title">Configurações</string>
     <string name="setting_action_save">Salvar</string>
@@ -64,8 +68,8 @@
     <string name="setting_keyword_remove_a11y">Remover palavras-chave %s</string>
 
     <string name="warning_title">Possíveis razões da falha do App</string>
-    <string name="warning_q">De Android 10(Q) em diante, os Apps sem método de entrada <b>não podem obter, modificar e prestar atenção ao Clipboard em segundo plano</b>. Embora este App tente o melhor, ainda pode falhar, e a análise das alterações no Clipboard não está disponível por enquanto. <b>Por favor, teste o App antes de usá-lo.</b></string>
-    <string name="warning_other_apps">Se você vê várias entradas ou histórico de entradas, isso significa que o <b>App do Teclado as armazena</b>. Neste caso, o App falha.</string>
+    <string name="warning_q">A partir do Android 10(Q) adiante, non-input-method apps <b>não podem obter, modificar e prestar atenção ao Clipboard em segundo plano</b>. Embora este App tente o melhor, ainda pode falhar nisto. A análise de alterações no Clipboard não está disponível por enquanto. <b>Por favor, teste o App antes de usá-lo.</b></string>
+    <string name="warning_other_apps">Se você vê várias entradas ou tudo histórico de entradas disponíveis, isso significa que seu <b>app do Teclado armazena tudo isto</b>. Neste caso, o App está falhando.</string>
     <string name="warning_keep_using">Continuar a usar</string>
 
     <string name="source_code">Código fonte</string>
