@@ -1,0 +1,5 @@
+Como deve saber, o conteúdo e as alterações feitas no Clipboard podem ser facilmente interceptados por qualquer app no Android, é uma falha de segurança considerável. Qualquer app pode obter suas senhas, números de cartão de crédito copiados, e muito mais.
+
+O Android tem o recurso de AutoPreenchimento entre outros mecanismos para cuidar de informações sensíveis. O Android Q soluciona parcialmente este problema. Mas ainda existem algumas formas de contornar essas restrições, usando serviços de acessibilidade e mostrando uma aba transparente.
+
+ClipboardCleaner não pode proteger suas senhas contra intento de qualquer outro app. Mas oferece formas de conferir e limpar seu Clipboard.
