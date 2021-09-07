@@ -66,9 +66,13 @@ fun Context.content() {
 
 private fun Context.clipboard() = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
 
-private fun ClipboardManager.getClipContent(context: Context): String = primaryClip.let { clip ->
-    if (clip != null && clip.itemCount > 0)
-        clip.getItemAt(0).coerceToText(context).toString() else ""
+private fun ClipboardManager.getClipContent(context: Context): String {
+    val primaryClip = primaryClip ?: return ""
+    val itemCount = primaryClip.itemCount
+    if (itemCount <= 0) return ""
+    return List(itemCount) { index ->
+        primaryClip.getItemAt(index).coerceToText(context).toString()
+    }.joinToString(separator = "\n")
 }
 
 //
