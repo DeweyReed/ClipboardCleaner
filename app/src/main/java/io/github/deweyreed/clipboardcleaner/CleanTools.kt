@@ -3,6 +3,7 @@ package io.github.deweyreed.clipboardcleaner
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.os.Build
 import androidx.annotation.StringDef
 import androidx.core.content.edit
 
@@ -24,7 +25,11 @@ fun Context.clean() {
     val clipboard = clipboard()
     fun clean() {
         if (clipboard.getClipContent(this).isNotEmpty()) {
-            clipboard.setPrimaryClip(ClipData.newPlainText("text", ""))
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                clipboard.clearPrimaryClip()
+            } else {
+                clipboard.setPrimaryClip(ClipData.newPlainText("text", ""))
+            }
             if (clipboard.getClipContent(this).isEmpty()) {
                 toast(R.string.toast_clipboard_cleaned)
             } else {
