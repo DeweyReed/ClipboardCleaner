@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">ClipboardCleaner</string>
+    <string name="toast_clipboard_cleaned">Schowek został wyczyszczony</string>
+    <string name="toast_clipboard_clean_failed">Czyszczenie schowka nie powiodło się</string>
+    <string name="toast_clipboard_is_empty">Schowek jest pusty</string>
+    <string name="toast_clipboard_nothing">Nic nie ma do czyszczenia</string>
+
+    <string name="action_clipboard_clean">Wyczyść schowek</string>
+    <string name="action_clipboard_clean_short">Wyczyść</string>
+    <string name="action_clipboard_content">Pokaż schowek</string>
+    <string name="action_clipboard_content_short">Zawartość</string>
+
+    <string name="shortcut_disabled">Wyłączone</string>
+
+    <string name="introduction">ClipboardCleaner jest tutaj, aby zapobiec przypadkowemu używaniu schowka, zabezpieczyć skopiowane hasło i chronić swoją prywatność!</string>
+
+    <string name="service_title">Usługa</string>
+    <string name="service_content">Utwórz usługę działającą w tle. Zresetuje schowek lub powiadomi Ciebie, jeśli zostanie zmieniony. To rozwiązanie jest skuteczne, ale rozładowuje baterię.</string>
+    <string name="service_clean">Wyczyść schowek, jeśli został zmieniony</string>
+    <string name="service_report">Powiadom, jeśli schowek się zmienił</string>
+    <string name="service_status">Stan: %s</string>
+    <string name="service_status_running">Działa</string>
+    <string name="service_status_stopped">Zatrzymany</string>
+    <string name="service_start">Uruchom usługę</string>
+    <string name="service_stop">Zatrzymaj usługę</string>
+    <string name="service_started">Uruchomiono usługę ClipboardCleaner</string>
+    <string name="service_stopped">Zatrzymano usługę ClipboardCleaner</string>
+
+    <string name="service_channel_name">Kanał powiadomień ClipboardCleaner</string>
+    <string name="service_notif_title">Twój schowek jest pod ochroną</string>
+
+    <string name="service_clean_timeout_template" formatted="false">Wyczyść schowek po %s (kliknij tutaj, aby edytować)</string>
+    <string name="service_clean_timeout">Koniec czasu</string>
+    <string name="service_clean_after_seconds_template">Schowek zostanie wyczyszczony za %s.</string>
+
+    <plurals name="seconds">
+        <item quantity="one">1 sekunda</item>
+        <item quantity="few"><xliff:g example="7" id="number">%s</xliff:g> sekundy</item>
+        <item quantity="many"><xliff:g example="7" id="number">%s</xliff:g> sekund</item>
+        <item quantity="other"><xliff:g example="7" id="number">%s</xliff:g> sekund</item>
+    </plurals>
+
+    <string name="widget_title">Widżet</string>
+    <string name="widget_content">Twórz widżety na ekranie głównym. Kliknij je, aby zresetować schowek lub wyświetlić zawartość schowka.\n\nMożesz je znaleźć na liście widżetów.</string>
+
+    <string name="shortcut_title">Skrót</string>
+    <string name="shortcut_content">Utwórz skrót do aplikacji na ekranie głównym. Kliknij je, aby zresetować schowek lub wyświetlić zawartość schowka.</string>
+    <string name="shortcut_create_clean">Dodaj skrót \"Wyczyść\"</string>
+    <string name="shortcut_create_content">Dodaj skrót \"Pokaż zawartość\"</string>
+    <string name="shortcut_no_permission">Aplikacja nie ma wystarczających uprawnień</string>
+    <string name="shortcut_have_permission">Pozwolenie udzielone! Utwórz teraz skróty.</string>
+
+    <string name="tile_title">Kafelka szybkiego ustawiania</string>
+    <string name="tile_content">Dodaj kafelek szybkich ustawień do paska powiadomień. Kliknij je, aby zresetować schowek lub wyświetlić zawartość schowka.\n\nMożesz je znaleźć na ekranie szybkiej edycji ustawień.</string>
+
+    <string name="assistant_title">Aplikacja Asystenta Systemu</string>
+    <string name="assistant_content">Ustaw aplikację jako aplikację asystenta systemu i używaj jej, naciskając długo przycisk \"Home\" lub przesuwając palcem z dolnych rogów.</string>
+    <string name="assistant_open_settings">Otwórz ustawienia asystenta</string>
+
+    <string name="setting_title">Ustawienie</string>
+    <string name="setting_action_save">Zapisz</string>
+    <string name="setting_message_saved">Zapisane</string>
+
+    <string name="setting_keyword_title">Filtr słów kluczowych</string>
+    <string name="setting_keyword_content">Jeśli ta opcja jest włączona, ClipboardBoard czyści tylko zawartość zawierającą słowa kluczowe.</string>
+
+    <string name="setting_keyword_normal_title">Słowo kluczowe</string>
+    <string name="setting_keyword_regex_title">Regex</string>
+    <string name="setting_keyword_add_a11y">Dodaj nowe słowo kluczowe</string>
+    <string name="setting_keyword_remove_a11y">Usuń słowo kluczowe %s</string>
+
+    <string name="warning_title">Możliwe przyczyny awarii aplikacji</string>
+    <string name="warning_q">W systemie Android 10(Q) aplikacje bez metody wprowadzania <b>nie mogą pobierać, modyfikować ani nadsłuchiwać schowka w tle</b>. Chociaż ta aplikacja stara się jak najlepiej, ale nadal nadłuchiwanie zmian w schowku może być niedostępne. <b>Przetestuj aplikację samodzielnie przed użyciem.</b></string>
+    <string name="warning_other_apps">Jeśli widzisz wiele klipów lub historię klipów, oznacza to, że <b>aplikacja klawiatury przechowuje je</b>. W takim przypadku ta aplikacja nie działa.</string>
+    <string name="warning_keep_using">Kontynuuj korzystanie</string>
+
+    <string name="source_code">Kod źródłowy</string>
+
+</resources>
+
