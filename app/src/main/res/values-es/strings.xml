@@ -17,7 +17,7 @@
     <string name="service_title">Servicio</string>
     <string name="service_content">Crea un servicio que se ejecuta en segundo plano. Vacía tu portapapeles si se ha modificado o te lo notifica. Esta solución es eficiente pero drena la batería</string>
     <string name="service_clean">Vaciar portapapeles si se ha modificado</string>
-    <string name="service_report">Avísame si el portapapeles ha modificado</string>
+    <string name="service_report">Avísame si el portapapeles se ha modificado</string>
     <string name="service_status">Estado: %s</string>
     <string name="service_status_running">Ejecutándose</string>
     <string name="service_status_stopped">Detenido</string>
@@ -52,8 +52,8 @@
     <string name="tile_content">Agrega un Mosaico de Configuración Rápida a tu barra de notificaciones. Presiónalos para vaciar o mirar el contenido del portapapeles. \n\nPuedes encontrarlos en el panel de edición de configuración rápida.</string>
 
     <string name="assistant_title">Aplicación de Asistencia del Sistema</string>
-    <string name="assistant_content">EStablece esta aplicación como la aplicación de asistencia del sistema y úsalo manteniendo presionado el botón de inicio o deslizando hacia arriba desde el borde inferior.</string>
-    <string name="assistant_open_settings">Abrir configuraciones de asistente</string>
+    <string name="assistant_content">Establece esta aplicación como la aplicación de asistencia del sistema. Úsalo manteniendo presionado el botón de inicio o deslizando hacia arriba desde el borde inferior.</string>
+    <string name="assistant_open_settings">Abrir configuraciones del asistente</string>
 
     <string name="setting_title">Configuración</string>
     <string name="setting_action_save">Guardar</string>
@@ -68,7 +68,7 @@
     <string name="setting_keyword_remove_a11y">Remover palabra clave %s</string>
 
     <string name="warning_title">Posibles razones por las que falló la aplicación</string>
-    <string name="warning_q">Desde Android 10 (Q), las aplicaciones sin método de entrada <b>no pueden obtener, modificar ni escuchar el portapapeles in segundo plano</b>. Aunque esta aplicación intenta lo mejor que puede, podría seguir sin funcionar y la función de escuchar el portapapeles no está disponible por ahora. <b>Por favor prueba tú mismo la aplicación antes de usarla.</b></string>
+    <string name="warning_q">Desde Android 10 (Q), a menos que una aplicación sea el editor de método de entrada (IME) predeterminado o esté en primer plano, <b>no podrá acceder a los datos del portapapeles</b>. Aunque esta aplicación intenta lo mejor que puede, podría seguir sin funcionar, y saber si se ha modificado el portapapeles no está disponible por ahora. <b>Por favor prueba tú mismo la aplicación antes de usarla.</b></string>
     <string name="warning_other_apps">Si ves múltiples entradas en el portapapeles significa que algo como <b>la aplicación del teclado las almacena</b>. En esta situación, esta aplicación no puede hacer algo al respecto.</string>
     <string name="warning_keep_using">Seguir Utilizando</string>
 
