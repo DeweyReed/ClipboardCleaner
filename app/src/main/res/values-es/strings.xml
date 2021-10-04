@@ -1,0 +1,77 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">ClipboardCleaner</string>
+    <string name="toast_clipboard_cleaned">El portapapeles ha sido vaciado</string>
+    <string name="toast_clipboard_clean_failed">El vaciado del portapapeles falló</string>
+    <string name="toast_clipboard_is_empty">El portapapeles está vacío</string>
+    <string name="toast_clipboard_nothing">No hay nada que hacer</string>
+
+    <string name="action_clipboard_clean">Vaciar portapapeles</string>
+    <string name="action_clipboard_clean_short">Vaciar</string>
+    <string name="action_clipboard_content">Mostrar contenido del portapapeles</string>
+    <string name="action_clipboard_content_short">Contenido</string>
+
+    <string name="shortcut_disabled">Deshabilitado</string>
+
+    <string name="introduction">ClipboardCleaner está aquí para prevenir que tu portapapelesis sea usado, asegurar tus contraseñas copiadas y defender tu provacida!</string>
+
+    <string name="service_title">Servicio</string>
+    <string name="service_content">Crear un servicio que se ejecute en segundo plano. Vacía tu portapapeles si se ha modificado o te lo notificamos. Esta solución es eficiente pero drena la batería</string>
+    <string name="service_clean">Vaciar portapapeles si se ha cambiado</string>
+    <string name="service_report">Avísame si el portapapeles ha cambiado</string>
+    <string name="service_status">Estado: %s</string>
+    <string name="service_status_running">Ejecutándose</string>
+    <string name="service_status_stopped">Detenido</string>
+    <string name="service_start">Iniciar Servicio</string>
+    <string name="service_stop">Detener Servicio</string>
+    <string name="service_started">El servicio del portapapeles inició</string>
+    <string name="service_stopped">El servicio del portapapeles se detuvo</string>
+
+    <string name="service_channel_name">Canal de notificación de ClipboardCleaner</string>
+    <string name="service_notif_title">Tu portapapeles está bajo protección</string>
+
+    <string name="service_clean_timeout_template" formatted="false">Vacía el portapapeles después de %s (presiona aquí para editar esto)</string>
+    <string name="service_clean_timeout">Límite de tiempo</string>
+    <string name="service_clean_after_seconds_template">El portapapeles será vacíado en %s.</string>
+
+    <plurals name="seconds">
+        <item quantity="one">1 segundo</item>
+        <item quantity="other"><xliff:g example="7" id="number">%s</xliff:g> segundos</item>
+    </plurals>
+
+    <string name="widget_title">Widget</string>
+    <string name="widget_content">Crear widgets en tu pantalla inicial. Presiónalos para vaciar o mirar el portapapeles. \n\nPuedes encontrarlos en la lista de widgets.</string>
+
+    <string name="shortcut_title">Acceso directo</string>
+    <string name="shortcut_content">Crear un acceso directo de la aplicación en tu pantalla inicial.Presiónalos para vaciar o mirar el contenido del portapapeles.</string>
+    <string name="shortcut_create_clean">Agregar \"Vaciar\" Acceso Directo</string>
+    <string name="shortcut_create_content">Agregar \"Mostrar Contenido\" Acceso Directo</string>
+    <string name="shortcut_no_permission">La aplicación no tiene los suficientes permisos</string>
+    <string name="shortcut_have_permission">Permisos otorgados! Por favor crea accesos directos ahora.</string>
+
+    <string name="tile_title">Quick Setting Tile</string>
+    <string name="tile_content">Add a Quick Setting Tile to your notification bar. Click them to reset clipboard or see clipboard content. \n\nYou can find them in the quick settings edit screen.</string>
+
+    <string name="assistant_title">System Assistant App</string>
+    <string name="assistant_content">Set this app as the system assistant app and use it by long-pressing the home button or swiping from the bottom corners.</string>
+    <string name="assistant_open_settings">Open assistant settings</string>
+
+    <string name="setting_title">Setting</string>
+    <string name="setting_action_save">Save</string>
+    <string name="setting_message_saved">Saved</string>
+
+    <string name="setting_keyword_title">Keyword Filter</string>
+    <string name="setting_keyword_content">If enabled, ClipboardBoard will only clean the content that includes keywords.</string>
+
+    <string name="setting_keyword_normal_title">Keyword</string>
+    <string name="setting_keyword_regex_title">Regex</string>
+    <string name="setting_keyword_add_a11y">Add a new keyword</string>
+    <string name="setting_keyword_remove_a11y">Remove keyword %s</string>
+
+    <string name="warning_title">Posibles razones por las que falló la aplicación</string>
+    <string name="warning_q">Desde Android 10(Q), Non-input-method apps <b>can\'t get, modify, and listen to the clipboard in the background</b>. Although this app tries its best, it still may fail, and the listening to clipboard changes is unavailable for now. <b>Please test the app yourself before use.</b></string>
+    <string name="warning_other_apps">Si ves múltiples entradas en el portapapeles significa que algoIf you see multiple clips or clip history, it means something like <b>the keyboard app stores them</b>. In this case, this app fails.</string>
+    <string name="warning_keep_using">Continue to Use</string>
+
+    <string name="source_code">Código Fuente</string>
+
+</resources>
