@@ -1,0 +1,5 @@
+Como ya sabrás, el contenido del portapapeles de Android puede ser leído por cualquier aplicación, lo cual es un agujero de seguridad. Cualquier aplicación puede leer y obtener la contraseña y los números de la tarjeta de crédito que has copiado (y muchas cosas más).
+
+Android tiene funciones de autocompletado y otros mecanismos que manejan información sensible. Android 10 (Q) arregla este problema de manera parcial, pero aún hay algunas maneras de eludir el límite, como usar los servicios de accesibilidad o mostrar una ventana transparente.
+
+ClipboardCleaner no puede proteger tus contraseñas de ser obtenidas por otras aplicaciones, pero te da maneras de verificar y vaciar el contenido de tu portapapeles.
