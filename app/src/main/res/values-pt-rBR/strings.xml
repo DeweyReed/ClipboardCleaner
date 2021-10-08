@@ -60,7 +60,7 @@
     <string name="setting_message_saved">Salvo</string>
 
     <string name="setting_keyword_title">Filtro de palavras-chave</string>
-    <string name="setting_keyword_content">Se for ativado, ClipboardBoard removerá apenas o conteúdo que inclua as palavras-chave.</string>
+    <string name="setting_keyword_content">Se for ativado, ClipboardCleaner removerá apenas o conteúdo que inclua as palavras-chave.</string>
 
     <string name="setting_keyword_normal_title">Palavras-chave</string>
     <string name="setting_keyword_regex_title">Regex</string>

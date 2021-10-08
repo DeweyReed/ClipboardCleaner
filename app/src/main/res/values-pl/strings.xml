@@ -63,7 +63,7 @@
     <string name="setting_message_saved">Zapisane</string>
 
     <string name="setting_keyword_title">Filtr słów kluczowych</string>
-    <string name="setting_keyword_content">Jeśli ta opcja jest włączona, ClipboardBoard czyści tylko zawartość zawierającą słowa kluczowe.</string>
+    <string name="setting_keyword_content">Jeśli ta opcja jest włączona, ClipboardCleaner czyści tylko zawartość zawierającą słowa kluczowe.</string>
 
     <string name="setting_keyword_normal_title">Słowo kluczowe</string>
     <string name="setting_keyword_regex_title">Regex</string>

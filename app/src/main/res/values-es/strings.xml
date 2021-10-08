@@ -60,7 +60,7 @@
     <string name="setting_message_saved">Guardado</string>
 
     <string name="setting_keyword_title">Filtro de Palabras Clave</string>
-    <string name="setting_keyword_content">Si está habilitado, ClipboardBoard solamente vaciará el contenido que contenga estas palabras clave.</string>
+    <string name="setting_keyword_content">Si está habilitado, ClipboardCleaner solamente vaciará el contenido que contenga estas palabras clave.</string>
 
     <string name="setting_keyword_normal_title">Palabra Clave</string>
     <string name="setting_keyword_regex_title">Expresiones Regulares</string>
