@@ -46,7 +46,11 @@ fun Context.getSafeSharedPreference(): SharedPreferences =
     PreferenceManager.getDefaultSharedPreferences(safeContext())
 
 fun Context.pendingActivityIntent(intent: Intent): PendingIntent {
-    return PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+    var flags = PendingIntent.FLAG_UPDATE_CURRENT
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        flags = flags or PendingIntent.FLAG_IMMUTABLE
+    }
+    return PendingIntent.getActivity(this, 0, intent, flags)
 }
 
 fun Context.requestInput(
@@ -105,9 +109,15 @@ private fun Context.createShortcut(
                 .setDisabledMessage(getString(R.string.shortcut_disabled))
                 .setIcon(IconCompat.createWithResource(this, iconRes))
                 .setIntent(IntentActivity.activityIntent(this, action))
-                .build(), PendingIntent.getBroadcast(
+                .build(),
+            PendingIntent.getBroadcast(
                 this, 0,
-                IntentActivity.activityIntent(this, ACTION_CONTENT), 0
+                IntentActivity.activityIntent(this, ACTION_CONTENT),
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    PendingIntent.FLAG_IMMUTABLE
+                } else {
+                    0
+                }
             ).intentSender
         )
         // Show current clipboard content after shortcut's created

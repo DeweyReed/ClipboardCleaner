@@ -28,6 +28,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".MainActivity"
+            android:exported="true"
             android:launchMode="singleTop"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
@@ -67,7 +68,9 @@
             android:enabled="true"
             android:exported="false" />
 
-        <receiver android:name=".widget.CleanWidget">
+        <receiver
+            android:name=".widget.CleanWidget"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -76,7 +79,9 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_clean_info" />
         </receiver>
-        <receiver android:name=".widget.ContentWidget">
+        <receiver
+            android:name=".widget.ContentWidget"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -88,6 +93,7 @@
 
         <service
             android:name=".tile.CleanTileService"
+            android:exported="true"
             android:icon="@drawable/ic_broom"
             android:label="@string/action_clipboard_clean"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -97,6 +103,7 @@
         </service>
         <service
             android:name=".tile.ContentTileService"
+            android:exported="true"
             android:icon="@drawable/ic_clipboard"
             android:label="@string/action_clipboard_content"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
