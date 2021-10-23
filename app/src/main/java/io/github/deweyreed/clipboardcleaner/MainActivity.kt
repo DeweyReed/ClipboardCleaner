@@ -82,6 +82,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            // The tile doesn't work during my test.
+            binding.cardTile.isGone = true
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
