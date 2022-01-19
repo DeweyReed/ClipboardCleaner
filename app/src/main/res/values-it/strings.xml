@@ -1,0 +1,77 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">ClipboardCleaner</string>
+    <string name="toast_clipboard_cleaned">Gli appunti sono stati puliti</string>
+    <string name="toast_clipboard_clean_failed">Pulizia appunti non riuscita</string>
+    <string name="toast_clipboard_is_empty">Gli appunti sono vuoti</string>
+    <string name="toast_clipboard_nothing">Niente ha bisogno di essere pulito</string>
+
+    <string name="action_clipboard_clean">Pulisci appunti</string>
+    <string name="action_clipboard_clean_short">Pulisci</string>
+    <string name="action_clipboard_content">Mostra appunti</string>
+    <string name="action_clipboard_content_short">Contenuto</string>
+
+    <string name="shortcut_disabled">Disabilitato</string>
+
+    <string name="introduction">ClipboardCleaner è qui per impedire che i tuoi appunti vengano usati casualmente, proteggere la tua password copiata e difendere la tua privacy!</string>
+
+    <string name="service_title">Servizio</string>
+    <string name="service_content">Crea un servizio in esecuzione in background. Reimposta gli appunti se sono cambiati o te lo segnala. Questa soluzione è efficiente ma scarica la batteria.</string>
+    <string name="service_clean">Reimposta gli appunti se sono cambiati</string>
+    <string name="service_report">Segnalami se gli appunti sono cambiati</string>
+    <string name="service_status">Stato: %s</string>
+    <string name="service_status_running">In esecuzione</string>
+    <string name="service_status_stopped">Fermo</string>
+    <string name="service_start">Avvia il Servizio</string>
+    <string name="service_stop">Ferma il servizio</string>
+    <string name="service_started">Servizio ClipboardCleaner Avviato</string>
+    <string name="service_stopped">Servizio ClipboardCleaner Fermato</string>
+
+    <string name="service_channel_name">Canale di notifica di ClipboardCleaner</string>
+    <string name="service_notif_title">I tuoi appunti sono protetti</string>
+
+    <string name="service_clean_timeout_template" formatted="false">Pulisci gli appunti dopo %s (clicca qui per modificare)</string>
+    <string name="service_clean_timeout">Timeout</string>
+    <string name="service_clean_after_seconds_template">Gli appunti verranno puliti in %s.</string>
+
+    <plurals name="seconds">
+        <item quantity="one">1 secondo</item>
+        <item quantity="other"><xliff:g example="7" id="number">%s</xliff:g> secondi</item>
+    </plurals>
+
+    <string name="widget_title">Widget</string>
+    <string name="widget_content">Crea widget nella tua schermata iniziale. Cliccali per reimpostare gli appunti o visualizzarne il contenuto. \n\nPuoi trovarli nell\'elenco dei widget.</string>
+
+    <string name="shortcut_title">Collegamento</string>
+    <string name="shortcut_content">Crea collegamenti all\'app nella tua schermata iniziale. Cliccali per reimpostare gli appunti o visualizzarne il contenuto.</string>
+    <string name="shortcut_create_clean">Aggiungi collegamento \"Pulisci\"</string>
+    <string name="shortcut_create_content">Aggiungi collegamento \"Mostra Contenuto\"</string>
+    <string name="shortcut_no_permission">L\'app non dispone di autorizzazioni sufficienti</string>
+    <string name="shortcut_have_permission">Permesso concesso! Si prega di creare le scorciatoie adesso.</string>
+
+    <string name="tile_title">Toggle Impostazioni Rapide</string>
+    <string name="tile_content">Aggiungi un toggle rapido alla tua barra delle notifiche. Cliccali per reimpostare gli appunti o visualizzarne il contenuto. \n\nPuoi trovarli nella schermata di modifica delle impostazioni rapide.</string>
+
+    <string name="assistant_title">App Assistente Digitale</string>
+    <string name="assistant_content">Imposta questa app come app assistente digitale e usala premendo a lungo il pulsante Home o scorrendo dagli angoli in basso.</string>
+    <string name="assistant_open_settings">Apri impostazioni assistente</string>
+
+    <string name="setting_title">Configurazione</string>
+    <string name="setting_action_save">Salva</string>
+    <string name="setting_message_saved">Salvato</string>
+
+    <string name="setting_keyword_title">Filtro Parola Chiave</string>
+    <string name="setting_keyword_content">Se abilitato, ClipboardCleaner pulirà solo il contenuto che include le parole chiave.</string>
+
+    <string name="setting_keyword_normal_title">Parola Chiave</string>
+    <string name="setting_keyword_regex_title">Regex</string>
+    <string name="setting_keyword_add_a11y">Aggiungi una parola chiave</string>
+    <string name="setting_keyword_remove_a11y">Rimuovi la parola chiave %s</string>
+
+    <string name="warning_title">Possibili ragioni per il fallimento dell\'app</string>
+    <string name="warning_q">Da Android 10(Q), le app che non sono metodo di input <b>non possono ottenere, modificare e ascoltare gli appunti in background</b>. Anche se questa app fa del suo meglio, potrebbe comunque fallire e l\'ascolto delle modifiche agli appunti non è disponibile per il momento. <b>Si prega di testare l\'app da soli prima dell\'uso.</b></string>
+    <string name="warning_other_apps">Se vedi più voci negli appunti, significa che qualcosa come <b>l\'app della tastiera le memorizza</b>. In questo caso, questa app fallisce.</string>
+    <string name="warning_keep_using">Continua a Usare</string>
+
+    <string name="source_code">Codice Sorgente</string>
+
+</resources>

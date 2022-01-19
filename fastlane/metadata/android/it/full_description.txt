@@ -1,0 +1,5 @@
+Come forse saprai, il contenuto degli appunti di Android e le sue modifiche possono essere ottenuti da qualsiasi app, il che è un buco di sicurezza se ci tieni. Qualsiasi app può ottenere la tua password copiata, numeri di carta di credito e altro.
+
+Android ha il riempimento automatico o altri meccanismi per gestire le informazioni sensibili. Anche Android Q risolve in parte questo problema. Ma ci sono ancora alcuni modi per aggirare il limite, come utilizzare i servizi di accessibilità e mostrare una finestra trasparente.
+
+ClipboardCleaner non può proteggere le tue password dall'essere ottenute da qualsiasi app. Ma ti dà modi per controllare e pulire i tuoi appunti.
