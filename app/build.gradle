@@ -6,11 +6,11 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'de.timfreiheit.resourceplaceholders.plugin'
 
 android {
-    compileSdk 31
+    compileSdk 33
     defaultConfig {
         applicationId "io.github.deweyreed.clipboardcleaner"
         minSdk 16
-        targetSdk 31
+        targetSdk 33
         versionCode 171
         versionName "1.7.1"
         vectorDrawables.useSupportLibrary true
