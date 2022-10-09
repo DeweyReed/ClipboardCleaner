@@ -75,11 +75,11 @@ private fun Context.clipboard() = getSystemService(Context.CLIPBOARD_SERVICE) as
 
 private fun ClipboardManager.isClipboardEmpty(context: Context): Boolean {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
-        return getClipContent(context).isBlank()
+        return getClipContent(context).isEmpty()
     }
     if (!hasPrimaryClip()) return true
     if (primaryClipDescription == null) return true
-    return getClipContent(context).isBlank()
+    return getClipContent(context).isEmpty()
 }
 
 private fun ClipboardManager.getClipContent(context: Context): String {
