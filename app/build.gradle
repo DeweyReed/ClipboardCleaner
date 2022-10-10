@@ -3,8 +3,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
-apply plugin: 'de.timfreiheit.resourceplaceholders.plugin'
-
 android {
     namespace 'io.github.deweyreed.clipboardcleaner'
     compileSdk 33
@@ -35,10 +33,6 @@ android {
     lint {
         abortOnError false
     }
-}
-
-resourcePlaceholders {
-    files = ['xml/shortcuts.xml']
 }
 
 dependencies {

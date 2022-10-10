@@ -10,7 +10,7 @@
         <intent
             android:action="io.github.deweyreed.clipboardcleaner.action.CLEAN"
             android:targetClass="io.github.deweyreed.clipboardcleaner.IntentActivity"
-            android:targetPackage="${applicationId}" />
+            android:targetPackage="io.github.deweyreed.clipboardcleaner" />
     </shortcut>
     <shortcut
         android:enabled="true"
@@ -22,6 +22,6 @@
         <intent
             android:action="io.github.deweyreed.clipboardcleaner.action.CONTENT"
             android:targetClass="io.github.deweyreed.clipboardcleaner.IntentActivity"
-            android:targetPackage="${applicationId}" />
+            android:targetPackage="io.github.deweyreed.clipboardcleaner" />
     </shortcut>
 </shortcuts>
