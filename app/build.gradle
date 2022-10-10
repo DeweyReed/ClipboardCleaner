@@ -6,6 +6,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'de.timfreiheit.resourceplaceholders.plugin'
 
 android {
+    namespace 'io.github.deweyreed.clipboardcleaner'
     compileSdk 33
     defaultConfig {
         applicationId "io.github.deweyreed.clipboardcleaner"
@@ -24,17 +25,14 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-            // TODO: (2021-07-13): proguard-android-optimize.txt removes used resources
-            // https://issuetracker.google.com/issues/170709331
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
     buildFeatures {
         viewBinding true
     }
-
-    lintOptions {
+    lint {
         abortOnError false
     }
 }

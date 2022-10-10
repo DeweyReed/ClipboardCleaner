@@ -1,5 +1,6 @@
 package io.github.deweyreed.clipboardcleaner
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import android.os.Build
@@ -49,6 +50,7 @@ class ClipboardCleaner : Application() {
     }
 
     companion object {
+        @SuppressLint("StaticFieldLeak")
         lateinit var app: ClipboardCleaner
     }
 }

@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                         Uri.parse("https://github.com/DeweyReed/ClipboardCleaner")
                     )
                 )
-            } catch (e: Exception) {
+            } catch (_: Exception) {
             }
             true
         }
