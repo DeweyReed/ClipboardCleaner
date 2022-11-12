@@ -23,9 +23,6 @@
     <a href="https://f-droid.org/en/packages/io.github.deweyreed.clipboardcleaner/" target="_blank">
         <img src="https://img.shields.io/badge/Download-FDroid-green.svg"/>
     </a>
-    <a href="https://www.coolapk.com/apk/180063" target="_blank">
-        <img src="https://img.shields.io/badge/Download-CoolApk-green.svg"/>
-    </a>
 </div>
 <br>
 
